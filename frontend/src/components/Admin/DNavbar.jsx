@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "boxicons/css/boxicons.min.css";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png"
 
 const DNavbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

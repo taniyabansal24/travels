@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Login.css";
 import "boxicons/css/boxicons.min.css";
+import {toast} from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [isActive, setIsActive] = useState(false);
@@ -14,6 +17,55 @@ const Login = () => {
   };
 
   const [showSignIn, setShowSignIn] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const navigate = useNavigate();
+
+  const handleRegisterSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post("/api/users", {
+        firstName,
+        lastName,
+        email,
+        password,
+      });
+      console.log(data);
+      // Handle successful registration (e.g., redirect to login or home page)
+      setIsActive(false); // Automatically switch to login form after registration
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
+      toast.success("Registration successful.")
+    } catch (error) {
+      console.error(error);
+      toast.error("Email already registered.")
+      // Handle registration error (e.g., display error message)
+    }
+  };
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post("/api/users/auth", {
+        email,
+        password,
+      });
+      console.log(data);
+      setEmail("");
+      setPassword("");
+      toast.success("Logged in successfully.")
+      navigate("/");
+      // Handle successful login (e.g., redirect to home page)
+    } catch (error) {
+      console.error(error);
+      toast.error("Email or password is incorrect")
+      // Handle login error (e.g., display error message)
+    }
+  };
 
   const toggleSignIn = () => {
     setShowSignIn((prevShowSignIn) => !prevShowSignIn);
@@ -24,32 +76,60 @@ const Login = () => {
       <div className="login-component" id="web-screen">
         <div className={`container ${isActive ? "active" : ""}`} id="container">
           <div className="form-container sign-up">
-            <form>
+            <form onSubmit={handleRegisterSubmit}>
               <h1>Create Account</h1>
-              <div className="social-icons">
-                <a href="#" className="icon">
-                  <i class="bx bxl-google-plus"></i>Sign up with Google
-                </a>
-              </div>
-              <span>or use your email for registration</span>
-              <input type="text" placeholder="First Name" />
-              <input type="text" placeholder="Last Name" />
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
+              
+              
+              <input
+                type="text"
+                placeholder="First Name"
+                required
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
+                required
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
               <button type="submit">Sign Up</button>
             </form>
           </div>
           <div className="form-container sign-in">
-            <form>
+            <form onSubmit={handleLoginSubmit}>
               <h1>Sign In</h1>
-              <div className="social-icons">
-                <a href="#" className="icon">
-                  <i class="bx bxl-google-plus"></i>Sign in with Google
-                </a>
-              </div>
-              <span>or use your email password</span>
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
+             
+              
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
               <a href="#">Forget Your Password?</a>
               <button type="submit">Sign In</button>
             </form>
@@ -86,86 +166,114 @@ const Login = () => {
         </div>
       </div>
       <div className="login-component" id="mobile-screen">
-      <div className="container">
-        <div className={`form-container ${showSignIn ? "sign-in" : "sign-up"}`}>
-          {showSignIn ? (
-            <form>
-              <h1>Sign In</h1>
-              <div className="social-icons">
-                <a href="#" className="icon">
-                  <i className="bx bxl-google-plus"></i>Sign in with Google
-                </a>
+        <div className="container">
+          <div className={`form-container ${showSignIn ? "sign-in" : "sign-up"}`}>
+            {showSignIn ? (
+              <form onSubmit={handleLoginSubmit}>
+                <h1>Sign In</h1>
+                
+                
+                <input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <a href="#">Forgot Your Password?</a>
+                <button type="submit">Sign In</button>
+              </form>
+            ) : (
+              <form onSubmit={handleRegisterSubmit}>
+                <h1>Create Account</h1>
+                
+                
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  required
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  required
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type="submit">Sign Up</button>
+              </form>
+            )}
+          </div>
+          <div className="toggle-container">
+            <div className="toggle">
+              <div className="toggle-panel toggle-left">
+                <h1>Welcome Back!</h1>
+                <p>Enter your personal details to use all site features</p>
+                <button
+                  className="hidden"
+                  id="login"
+                  onClick={() => setShowSignIn(true)}
+                >
+                  Sign In
+                </button>
               </div>
-              <span>or use your email and password</span>
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
-              <a href="#">Forgot Your Password?</a>
-              <button type="submit">Sign In</button>
-            </form>
-          ) : (
-            <form>
-              <h1>Create Account</h1>
-              <div className="social-icons">
-                <a href="#" className="icon">
-                  <i className="bx bxl-google-plus"></i>Sign up with Google
-                </a>
+              <div className="toggle-panel toggle-right">
+                <h1>Hello, Friend!</h1>
+                <p>
+                  Register with your personal details to use all site features
+                </p>
+                <button
+                  className="hidden"
+                  id="register"
+                  onClick={() => setShowSignIn(false)}
+                >
+                  Sign Up
+                </button>
               </div>
-              <span>or use your email for registration</span>
-              <input type="text" placeholder="First Name" />
-              <input type="text" placeholder="Last Name" />
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
-              <button type="submit">Sign Up</button>
-            </form>
-          )}
-        </div>
-        <div className="toggle-container">
-          <div className="toggle">
-            <div className="toggle-panel toggle-left">
-              <h1>Welcome Back!</h1>
-              <p>Enter your personal details to use all site features</p>
-              <button
-                className="hidden"
-                id="login"
-                onClick={() => setShowSignIn(true)}
-              >
-                Sign In
-              </button>
-            </div>
-            <div className="toggle-panel toggle-right">
-              <h1>Hello, Friend!</h1>
-              <p>
-                Register with your personal details to use all site features
-              </p>
-              <button
-                className="hidden"
-                id="register"
-                onClick={() => setShowSignIn(false)}
-              >
-                Sign Up
-              </button>
             </div>
           </div>
-        </div>
-        <div className="switch-form">
-          {showSignIn ? (
-            <p>
-              Don't have an account?{' '}
-              <a href="#" onClick={toggleSignIn}>
-                Sign Up
-              </a>
-            </p>
-          ) : (
-            <p>
-              Already have an account?{' '}
-              <a href="#" onClick={toggleSignIn}>
-                Sign In
-              </a>
-            </p>
-          )}
+          <div className="switch-form">
+            {showSignIn ? (
+              <p>
+                Don't have an account?{" "}
+                <a href="#" onClick={toggleSignIn}>
+                  Sign Up
+                </a>
+              </p>
+            ) : (
+              <p>
+                Already have an account?{" "}
+                <a href="#" onClick={toggleSignIn}>
+                  Sign In
+                </a>
+              </p>
+            )}
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 };

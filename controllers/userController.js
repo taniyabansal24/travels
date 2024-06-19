@@ -2,9 +2,7 @@ import asyncHandler from "../middleware/asyncHandler.js";
 import User from "../models/userModel.js";
 import generateToken from "../utils/generatetoken.js";
 
-// @desc    Auth user & get token
-// @route   POST /api/users/auth
-// @access  Public 
+
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -15,7 +13,8 @@ const authUser = asyncHandler(async (req, res) => {
 
     res.status(200).json({
       _id: user._id,
-      name: user.name,
+      firstName: user.firstName,
+      lastName: user.lastName,
       email: user.email,
       isAdmin: user.isAdmin,
     });
@@ -25,40 +24,43 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Register a new user
-// @route   POST /api/users
-// @access  Public
-const registerUser = asyncHandler(async (req, res) => {
-    const { name, email, password } = req.body;
 
-    const userExists = await User.findOne({ email });
-  
-    if (userExists) {
-      res.status(400);
-      throw new Error('User already exists');
-    }
-  
-    const user = await User.create({
-      name,
-      email,
-      password,
+
+const registerUser = asyncHandler(async (req, res) => {
+  const { firstName, lastName, email, password } = req.body;
+
+  const userExists = await User.findOne({ email });
+
+  if (userExists) {
+    res.status(400);
+    throw new Error('User already exists');
+  }
+
+  const user = await User.create({
+    firstName,
+    lastName,
+    email,
+    password,
+  });
+
+  if (user) {
+    //generateToken(res, user._id);
+
+    res.status(201).json({
+      _id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      isAdmin: user.isAdmin,
     });
-  
-    if (user) {
-      generateToken(res, user._id);
-  
-      res.status(201).json({
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        isAdmin: user.isAdmin,
-      });
-    } else {
-      res.status(400);
-      throw new Error('Invalid user data');
-    }
-  
+  } else {
+    res.status(400);
+    throw new Error('Invalid user data');
+  }
 });
+
+
+
 
 // @desc    Logout user / clear cookie
 // @route   POST /api/users/logout
@@ -77,7 +79,8 @@ const getUserProfile = asyncHandler(async (req, res) => {
     if (user) {
       res.json({
         _id: user._id,
-        name: user.name,
+        firstName: user.firstName,
+        lastName: user.lastName,
         email: user.email,
         isAdmin: user.isAdmin,
       });

@@ -1,13 +1,30 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "boxicons/css/boxicons.min.css";
 import "./Sidebar.css";
+import axios from "axios";
+import Login from "../Login/Login";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const sidebarRef = useRef(null);
   const sidebarBtnRef = useRef(null);
   const arrowRefs = useRef([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
+
+    const fetchUser = async () => {
+      try {
+        const { data } = await axios.get("/api/users/profile"); // Endpoint to fetch user profile
+        setUser(data); // Assuming response contains user data when authenticated
+      } catch (error) {
+        console.error("User not authenticated");
+        setUser(null);
+      }
+    };
+
+    fetchUser();
+
     const handleArrowClick = (e) => {
       let arrowParent = e.target.parentElement.parentElement; // selecting main parent of arrow
       arrowParent.classList.toggle("showMenu");
@@ -42,7 +59,9 @@ const Sidebar = () => {
 
   return (
     <>
-      <div ref={sidebarRef} className="sidebar close">
+    {user ? (
+      <>
+       <div ref={sidebarRef} className="sidebar close">
         <div className="logo-details">
         <i class='bx bxs-cog'></i>
           <span className="logo_name">Admin Panel</span>
@@ -277,6 +296,14 @@ const Sidebar = () => {
           <span className="text">Hello! Admin</span>
         </div>
       </section>
+      </>
+    ) : (
+      <>
+      Not autherized as admin
+      <Login />
+      </>
+    )}
+     
     </>
   );
 };
