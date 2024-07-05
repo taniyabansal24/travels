@@ -36,23 +36,23 @@ const Hotelview = () => {
     <div>
       <div className="hotelContainer">
         {open && (
-          <div className="slider">
+          <div className="slider sticky w-[100vw] h-[100vh]">
             <FontAwesomeIcon
               icon={faCircleXmark}
-              className="close"
+              className="close top-5 right-5"
               onClick={() => setOpen(false)}
             />
             <FontAwesomeIcon
               icon={faCircleArrowLeft}
-              className="arrow"
+              className="arrow m-5 text-[50px]"
               onClick={() => handleMove("l")}
             />
             <div className="sliderWrapper">
-              <img src={photos[slideNumber].src} alt="" className="sliderImg" />
+              <img src={photos[slideNumber].src} alt="" className="w-[80%] h-[80vh]" />
             </div>
             <FontAwesomeIcon
               icon={faCircleArrowRight}
-              className="arrow"
+              className="arrow m-5 text-[50px]"
               onClick={() => handleMove("r")}
             />
           </div>

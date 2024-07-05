@@ -3,6 +3,7 @@ import "./App.css";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from "./components/Navbar";
+
 // import Hero from "./components/Hero";
 // import WhyChooseUs from "./components/Whyus";
 import Footer from "./components/Footer";
@@ -42,6 +43,7 @@ import AllCategory from "./components/Admin/Tour/AllCategory";
 import EditCategory from "./components/Admin/Tour/EditCategory";
 import EditPackage from "./components/Admin/Tour/EditPackage";
 import Login from "./components/Login/Login";
+import SubNavbar from "./components/SubNavbar";
 
 
 // import Tourpage from "./components/test/Tourpage";
@@ -54,8 +56,8 @@ function App() {
       element: (
         <>
          <Navbar />
-          <div className="fake-header h-[15vh] bg-transparent"></div>
-
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
+        
           <Home />
           <Footer /> 
          
@@ -75,7 +77,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <div className="fake-header h-[15vh] bg-transparent"></div>
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
           <Blog />
           <Footer />
         </>
@@ -86,7 +88,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <div className="fake-header h-[15vh] bg-transparent"></div>
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
           {/* <Home /> */}
           <BlogPage />
 
@@ -99,7 +101,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <div className="fake-header h-[15vh] bg-transparent"></div>
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
           <Tour />
           <Footer />
         </>
@@ -110,7 +112,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <div className="fake-header h-[15vh] bg-transparent"></div>
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
 
           <Ptour /> 
 
@@ -227,7 +229,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <div className="fake-header h-[15vh] bg-transparent"></div>
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
           <Hotel />
           <Footer />
         </>
@@ -238,7 +240,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <div className="fake-header h-[15vh] bg-transparent"></div>
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
 
           <Photel data={data[0].types} />
 
@@ -251,7 +253,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <div className="fake-header h-[15vh] bg-transparent"></div>
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
  
           <Photel data={data[1].types} />
           <Footer />
@@ -263,7 +265,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <div className="fake-header h-[15vh] bg-transparent"></div>
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
           <Cab />
           <Footer />
         </>

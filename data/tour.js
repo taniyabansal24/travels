@@ -1,384 +1,8 @@
-// const tours = [
-//   {
-//     //   id: 1,
-//     category: "Mountain",
-//     types: [
-//       {
-//         //   id: 1,
-//         name: "Himachal",
-//         description:
-//           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-//         image: "/uploads/image-1716874126098.jpg",
-//         price: 5000,
-//         rating: 5,
-//         reviews: 100,
-//         location: "Himachal Pradesh",
-//         // duration: "10",
-//         days:5,
-//         nights:4,
-//         title: "Mountain",
-//         inclusions: [
-//           "Meal as per hotel Plan and drinks free too",
-//           "Return airport and round trip transfers",
-//           "Accommodation on twin sharing basis",
-//           "Enjoy Brussels day tours. Overnight Brussels",
-//         ],
-//         tourPlan: [
-//           {
-//             day: 1,
-//             name: "City Highlights",
-//             description:
-//               "Visit the city's main landmarks including museums, parks, and historical sites.",
-//           },
-//           {
-//             day: 2,
-//             name: "Cultural Experience",
-//             description:
-//               "Explore the local culture through food, music, and art.",
-//           },
-//           {
-//             day: 3,
-//             name: "Cultural Experience",
-//             description:
-//               "Explore the local culture through food, music, and art.",
-//           },
-//         ],
-//       },
-//       {
-//         //   id: 2,
-//         name: "Ladakh",
-//         description:
-//           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-//         image: "/uploads/image-1716874126098.jpg",
-//         price: 10000,
-//         rating: 4.8,
-//         reviews: 120,
-//         location: "Jammu and Kashmir",
-//         days:6,
-//         nights:5,
-//         title: "Mountain",
-
-//         inclusions: [
-//           "Accommodation in traditional Ladakhi homes",
-//           "Guided trekking expeditions",
-//           "Visits to monasteries and cultural sites",
-//           "Meals provided",
-//         ],
-//         tourPlan: [
-//           {
-//             day: 1,
-//             name: "Arrival and Acclimatization",
-//             description:
-//               "Arrive in Ladakh and spend the day acclimatizing to the altitude.",
-//           },
-//           {
-//             day: 2,
-//             name: "Monastery Visits",
-//             description:
-//               "Visit ancient monasteries and learn about Ladakhi culture and religion.",
-//           },
-//           {
-//             day: 3,
-//             name: "Trekking Expedition",
-//             description:
-//               "Embark on a multi-day trek through the stunning Ladakhi landscape.",
-//           },
-//         ],
-//       },
-//       {
-//         //   id: 3,
-//         name: "Kashmir",
-//         description:
-//           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-//         image: "/uploads/image-1716874126098.jpg",
-//         price: 15000,
-//         rating: 4.5,
-//         reviews: 80,
-//         location: "Jammu and Kashmir",
-//         days:7,
-//         nights:6,
-//         title: "Mountain",
-//         inclusions: [
-//           "Accommodation in traditional Ladakhi homes",
-//           "Guided Trekking expeditions",
-//           "Visits to monasteries and cultural sites",
-//           "Meals provided",
-//         ],
-//         tourPlan: [
-//           {
-//             day: 1,
-//             name: "Arrival and Acclimatization",
-//             description:
-//               "Arrive in Ladakh and spend the day acclimatizing to the altitude.",
-//           },
-//           {
-//             day: 2,
-//             name: "Monastery Visits",
-//             description:
-//               "Visit ancient monasteries and learn about Ladakhi culture and religion.",
-//           },
-//         ],
-//       },
-//     ],
-//     description:
-//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-//     // image: "/uploads/image-1716874126098.jpg",
-//   },
-//   {
-//     //   id: 2,
-//     category: "Beach",
-//     types: [
-//       {
-//         //   id: 1,
-//         name: "Goa",
-//         description:
-//           "Enjoy the sun, sand, and sea in the tropical paradise of Goa.",
-//         image: "/uploads/image-1716874126098.jpg",
-//         price: 6000,
-//         rating: 4.7,
-//         reviews: 90,
-//         location: "Goa, India",
-//         days:8,
-//         nights:7,
-//         title: "Beach",
-//         inclusions: [
-//           "Accommodation in beachfront resorts",
-//           "Water sports activities",
-//           "Beachside bonfire dinners",
-//           "Excursions to nearby attractions",
-//         ],
-//         tourPlan: [
-//           {
-//             day: 1,
-//             name: "Beach Relaxation",
-//             description: "Spend the day relaxing on the sandy beaches of Goa.",
-//           },
-//           {
-//             day: 2,
-//             name: "Water Sports",
-//             description:
-//               "Indulge in thrilling water sports activities like parasailing and jet skiing.",
-//           },
-//           {
-//             day: 3,
-//             name: "Cultural Exploration",
-//             description:
-//               "Explore the rich cultural heritage of Goa through its churches and temples.",
-//           },
-//         ],
-//       },
-//       {
-//         //   id: 2,
-//         name: "Maldives",
-//         description:
-//           "Experience the beauty of the tropical paradise of Maldives.",
-//         image: "/uploads/image-1716874126098.jpg",
-//         price: 12000,
-//         rating: 4.5,
-//         reviews: 80,
-//         location: "Maldives, India",
-//         days:5,
-//         nights:4,
-//         title: "Beach",
-//         inclusions: [
-//           "Accommodation in 5-star hotels",
-//           "Water sports activities",
-//           "Beachside bonfire dinners",
-//           "Excursions to nearby attractions",
-//         ],
-//         tourPlan: [
-//           {
-//             day: 1,
-//             name: "Beach Relaxation",
-//             description:
-//               "Spend the day relaxing on the sandy beaches of Maldives.",
-//           },
-//           {
-//             day: 2,
-//             name: "Water Sports",
-//             description:
-//               "Indulge in thrilling water sports activities like parasailing and jet skiing.",
-//           },
-//           {
-//             day: 3,
-//             name: "Cultural Exploration",
-//             description:
-//               "Explore the rich cultural heritage of Maldives through its churches and temples.",
-//           },
-//         ],
-//       },
-//       {
-//         //   id: 3,
-//         name: "Phuket",
-//         description:
-//           "Explore the stunning beaches and lively nightlife of Phuket.",
-//         image: "/uploads/image-1716874126098.jpg",
-//         price: 18000,
-//         rating: 4.5,
-//         reviews: 80,
-//         location: "Phuket, Thailand",
-//         days:6,
-//         nights:5,
-//         title: "Beach",
-//         inclusions: [
-//           "Accommodation in beachfront resorts",
-//           "Island-hopping tours",
-//           "Thai cooking classes",
-//           "Night market visits",
-//         ],
-//         tourPlan: [
-//           {
-//             day: 1,
-//             name: "Beach Relaxation",
-//             description: "Relax and unwind on the beautiful beaches of Phuket.",
-//           },
-//           {
-//             day: 2,
-//             name: "Island-hopping Adventure",
-//             description: "Explore nearby islands and discover hidden coves.",
-//           },
-//           {
-//             day: 3,
-//             name: "Cultural Exploration",
-//             description:
-//               "Experience Thai culture through visits to temples and markets.",
-//           },
-//         ],
-//       },
-//     ],
-//     description:
-//       "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-//     // image: "/uploads/image-1716874126098.jpg",
-//   },
-//   {
-//     //   id: 3,
-//     category: "Desert",
-//     types: [
-//       {
-//         //   id: 1,
-//         name: "Sahara-Desert",
-//         description: "Experience the vastness and beauty of the Sahara Desert.",
-//         image: "/uploads/image-1716874126098.jpg",
-//         price: 7000,
-//         rating: 4.9,
-//         reviews: 110,
-//         location: "North Africa",
-//         title: "Desert",
-//         days:8,
-//         nights:7,
-//         inclusions: [
-//           "Accommodation in desert camps",
-//           "Camel trekking across sand dunes",
-//           "Sunset and sunrise viewing",
-//           "Traditional desert meals",
-//         ],
-//         tourPlan: [
-//           {
-//             day: 1,
-//             name: "Arrival and Desert Camp",
-//             description:
-//               "Arrive in the Sahara and settle into your desert camp.",
-//           },
-//           {
-//             day: 2,
-//             name: "Camel Trekking",
-//             description:
-//               "Embark on a camel trek across the desert, exploring its vast landscapes.",
-//           },
-//           {
-//             day: 3,
-//             name: "Oasis Visit",
-//             description: "Visit lush oases nestled amidst the desert sands.",
-//           },
-//         ],
-//       },
-//       {
-//         //   id: 2,
-//         name: "Gobi Desert",
-//         description: "Experience the beauty and majesty of the Gobi Desert.",
-//         image: "/uploads/image-1716874126098.jpg",
-//         price: 14000,
-//         rating: 4.7,
-//         reviews: 90,
-//         location: "South Asia",
-//         title: "Desert",
-//         days:5,
-//         nights:4,
-//         inclusions: [
-//           "Accommodation in desert lodges",
-//           "Water sports activities",
-//           "Cultural tours",
-//           "Sunset and sunrise viewing",
-//         ],
-//         tourPlan: [
-//           {
-//             day: 1,
-//             name: "Arrival and Desert Camp",
-//             description:
-//               "Arrive in the Gobi Desert and settle into your desert camp.",
-//           },
-//           {
-//             day: 2,
-//             name: "Water Sports",
-//             description:
-//               "Experience water sports activities like parasailing and jet skiing.",
-//           },
-//         ],
-//       },
-//     ],
-//     description:
-//       "Sed et urna id dolor elementum ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-//     // image: "/uploads/image-1716874126098.jpg",
-//   },
-//   {
-//     //   id: 4,
-//     category: "Camping",
-//     types: [
-//       {
-//         //   id: 1,
-//         name: "Camping",
-//         description:
-//           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-//         image: "/uploads/image-1716874126098.jpg",
-//         price: 8000,
-//         rating: 4.9,
-//         reviews: 110,
-//         location: "North Africa",
-//         title: "Camping",
-//         days:3,
-//         nights:2,
-//         inclusions: [
-//           "Accommodation in desert lodges",
-//           "Water sports activities",
-//           "Cultural tours",
-//           "Sunset and sunrise viewing",
-//         ],
-//         tourPlan: [
-//           {
-//             day: 1,
-//             name: "Arrival and Camp",
-//             description: "Arrive in the desert and settle into your camp.",
-//           },
-//           {
-//             day: 2,
-//             name: "Camping Activities",
-//             description:
-//               "Explore the desert's natural beauty and enjoy outdoor activities.",
-//           },
-//         ],
-//       },
-//     ],
-//     description:
-//       "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-//     // image: "/uploads/image-1716874126098.jpg",
-//   },
-// ];
-
-// export default tours;
-
 const tours = [
   {
     category: "Mountain",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
     types: [
       {
         name: "Himachal",
@@ -392,6 +16,27 @@ const tours = [
         days: 5,
         nights: 4,
         title: "Mountain",
+        photos: [
+          {
+            src: "https://images.unsplash.com/photo-1624358084630-f0880cb776a2?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1563124155-dbc34ba9bedb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=1024x1024&w=is&k=20&c=ogligY6KGUvn3-OUZ2d49Dk-wnu0CXf6wYddSYNaC2E=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1044399860/photo/ganga-arthi-in-the-holy-city-of-rishikesh-in-uttarakhand-india-to-worship-river-ganga-ganges.jpg?s=1024x1024&w=is&k=20&c=H4n93UJhR8LPsa_aQdnv1A_BbGWVCQBjf-_mYMvIC44=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1752927325/photo/lord-shiva-statue-on-the-banks-of-the-sacred-ganges-river-in-rishikesh-india.jpg?s=1024x1024&w=is&k=20&c=v6dsl2iSWOP02bnQg6dzNZI7V86odf5Eu6OemV4v6TU=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/825268350/photo/hardiwar.webp?b=1&s=170667a&w=0&k=20&c=O2GgcESUTZp-GfprLRKPX8OXWN_kr_fZ-31YB1NRduA=",
+          },
+        ],
+
         inclusions: [
           "Meal as per hotel Plan and drinks free too",
           "Return airport and round trip transfers",
@@ -404,22 +49,110 @@ const tours = [
             name: "City Highlights",
             description:
               "Visit the city's main landmarks including museums, parks, and historical sites.",
+            car: [
+              {
+                destination: "New Delhi to Haridwar",
+                type: "Private Transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Haridwar",
+                location: "Haridwar, India",
+                places: ["Har Ki Pauri", "Chandi Devi", "Mansa Devi"],
+                duration: "4 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1511754863001-18d44abd0a93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Near Shiv Murti Chowk @ 12 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 2,
             name: "Cultural Experience",
             description:
               "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Haridwar",
+                destination: "Haridwar to Rishikesh",
+                type: "private transport",
+                model: "swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Rishikesh",
+                location: "Rishikesh, India",
+                places: ["Bharat Mandir", "Parmarth Niketan", "Ram Jhula"],
+                duration: "3 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1588750765220-50603c3c0c7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Tapovan @ 2 PM",
+                name: "Hotel Rishikesh Grand",
+                ratings: "3.5",
+                location: "Tapovan",
+                stayDate: "10th Aug 2024 - 11th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 3,
             name: "Cultural Experience",
             description:
               "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Rishikesh",
+                destination: "Rishikesh to Mussoorie",
+                type: "Private transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming:
+                  "Check-in to Hotel in Near Picture Palace Bus Stand @ 2 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
         ],
-        availableFrom: new Date('2024-06-01'),
-        availableTill: new Date('2024-09-30'),
+        availableFrom: new Date("2024-06-01"),
+        availableTill: new Date("2024-09-30"),
       },
       {
         name: "Ladakh",
@@ -433,34 +166,142 @@ const tours = [
         days: 6,
         nights: 5,
         title: "Mountain",
+        photos: [
+          {
+            src: "https://images.unsplash.com/photo-1624358084630-f0880cb776a2?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1563124155-dbc34ba9bedb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=1024x1024&w=is&k=20&c=ogligY6KGUvn3-OUZ2d49Dk-wnu0CXf6wYddSYNaC2E=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1044399860/photo/ganga-arthi-in-the-holy-city-of-rishikesh-in-uttarakhand-india-to-worship-river-ganga-ganges.jpg?s=1024x1024&w=is&k=20&c=H4n93UJhR8LPsa_aQdnv1A_BbGWVCQBjf-_mYMvIC44=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1752927325/photo/lord-shiva-statue-on-the-banks-of-the-sacred-ganges-river-in-rishikesh-india.jpg?s=1024x1024&w=is&k=20&c=v6dsl2iSWOP02bnQg6dzNZI7V86odf5Eu6OemV4v6TU=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/825268350/photo/hardiwar.webp?b=1&s=170667a&w=0&k=20&c=O2GgcESUTZp-GfprLRKPX8OXWN_kr_fZ-31YB1NRduA=",
+          },
+        ],
         inclusions: [
-          "Accommodation in traditional Ladakhi homes",
-          "Guided trekking expeditions",
-          "Visits to monasteries and cultural sites",
-          "Meals provided",
+          "Meal as per hotel Plan and drinks free too",
+          "Return airport and round trip transfers",
+          "Accommodation on twin sharing basis",
+          "Enjoy Brussels day tours. Overnight Brussels",
         ],
         tourPlan: [
           {
             day: 1,
-            name: "Arrival and Acclimatization",
+            name: "City Highlights",
             description:
-              "Arrive in Ladakh and spend the day acclimatizing to the altitude.",
+              "Visit the city's main landmarks including museums, parks, and historical sites.",
+            car: [
+              {
+                destination: "New Delhi to Haridwar",
+                type: "Private Transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Haridwar",
+                location: "Haridwar, India",
+                places: ["Har Ki Pauri", "Chandi Devi", "Mansa Devi"],
+                duration: "4 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1511754863001-18d44abd0a93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Near Shiv Murti Chowk @ 12 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 2,
-            name: "Monastery Visits",
+            name: "Cultural Experience",
             description:
-              "Visit ancient monasteries and learn about Ladakhi culture and religion.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Haridwar",
+                destination: "Haridwar to Rishikesh",
+                type: "private transport",
+                model: "swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Rishikesh",
+                location: "Rishikesh, India",
+                places: ["Bharat Mandir", "Parmarth Niketan", "Ram Jhula"],
+                duration: "3 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1588750765220-50603c3c0c7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Tapovan @ 2 PM",
+                name: "Hotel Rishikesh Grand",
+                ratings: "3.5",
+                location: "Tapovan",
+                stayDate: "10th Aug 2024 - 11th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 3,
-            name: "Trekking Expedition",
+            name: "Cultural Experience",
             description:
-              "Embark on a multi-day trek through the stunning Ladakhi landscape.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Rishikesh",
+                destination: "Rishikesh to Mussoorie",
+                type: "Private transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming:
+                  "Check-in to Hotel in Near Picture Palace Bus Stand @ 2 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
         ],
-        availableFrom: new Date('2024-06-15'),
-        availableTill: new Date('2024-09-15'),
+        availableFrom: new Date("2024-06-15"),
+        availableTill: new Date("2024-09-15"),
       },
       {
         name: "Kashmir",
@@ -474,28 +315,142 @@ const tours = [
         days: 7,
         nights: 6,
         title: "Mountain",
+        photos: [
+          {
+            src: "https://images.unsplash.com/photo-1624358084630-f0880cb776a2?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1563124155-dbc34ba9bedb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=1024x1024&w=is&k=20&c=ogligY6KGUvn3-OUZ2d49Dk-wnu0CXf6wYddSYNaC2E=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1044399860/photo/ganga-arthi-in-the-holy-city-of-rishikesh-in-uttarakhand-india-to-worship-river-ganga-ganges.jpg?s=1024x1024&w=is&k=20&c=H4n93UJhR8LPsa_aQdnv1A_BbGWVCQBjf-_mYMvIC44=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1752927325/photo/lord-shiva-statue-on-the-banks-of-the-sacred-ganges-river-in-rishikesh-india.jpg?s=1024x1024&w=is&k=20&c=v6dsl2iSWOP02bnQg6dzNZI7V86odf5Eu6OemV4v6TU=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/825268350/photo/hardiwar.webp?b=1&s=170667a&w=0&k=20&c=O2GgcESUTZp-GfprLRKPX8OXWN_kr_fZ-31YB1NRduA=",
+          },
+        ],
         inclusions: [
-          "Accommodation in traditional Ladakhi homes",
-          "Guided Trekking expeditions",
-          "Visits to monasteries and cultural sites",
-          "Meals provided",
+          "Meal as per hotel Plan and drinks free too",
+          "Return airport and round trip transfers",
+          "Accommodation on twin sharing basis",
+          "Enjoy Brussels day tours. Overnight Brussels",
         ],
         tourPlan: [
           {
             day: 1,
-            name: "Arrival and Acclimatization",
+            name: "City Highlights",
             description:
-              "Arrive in Ladakh and spend the day acclimatizing to the altitude.",
+              "Visit the city's main landmarks including museums, parks, and historical sites.",
+            car: [
+              {
+                destination: "New Delhi to Haridwar",
+                type: "Private Transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Haridwar",
+                location: "Haridwar, India",
+                places: ["Har Ki Pauri", "Chandi Devi", "Mansa Devi"],
+                duration: "4 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1511754863001-18d44abd0a93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Near Shiv Murti Chowk @ 12 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 2,
-            name: "Monastery Visits",
+            name: "Cultural Experience",
             description:
-              "Visit ancient monasteries and learn about Ladakhi culture and religion.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Haridwar",
+                destination: "Haridwar to Rishikesh",
+                type: "private transport",
+                model: "swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Rishikesh",
+                location: "Rishikesh, India",
+                places: ["Bharat Mandir", "Parmarth Niketan", "Ram Jhula"],
+                duration: "3 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1588750765220-50603c3c0c7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Tapovan @ 2 PM",
+                name: "Hotel Rishikesh Grand",
+                ratings: "3.5",
+                location: "Tapovan",
+                stayDate: "10th Aug 2024 - 11th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
+          },
+          {
+            day: 3,
+            name: "Cultural Experience",
+            description:
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Rishikesh",
+                destination: "Rishikesh to Mussoorie",
+                type: "Private transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming:
+                  "Check-in to Hotel in Near Picture Palace Bus Stand @ 2 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
         ],
-        availableFrom: new Date('2024-05-01'),
-        availableTill: new Date('2024-10-31'),
+        availableFrom: new Date("2024-05-01"),
+        availableTill: new Date("2024-10-31"),
       },
     ],
     description:
@@ -503,6 +458,8 @@ const tours = [
   },
   {
     category: "Beach",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
     types: [
       {
         name: "Goa",
@@ -516,33 +473,142 @@ const tours = [
         days: 8,
         nights: 7,
         title: "Beach",
+        photos: [
+          {
+            src: "https://images.unsplash.com/photo-1624358084630-f0880cb776a2?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1563124155-dbc34ba9bedb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=1024x1024&w=is&k=20&c=ogligY6KGUvn3-OUZ2d49Dk-wnu0CXf6wYddSYNaC2E=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1044399860/photo/ganga-arthi-in-the-holy-city-of-rishikesh-in-uttarakhand-india-to-worship-river-ganga-ganges.jpg?s=1024x1024&w=is&k=20&c=H4n93UJhR8LPsa_aQdnv1A_BbGWVCQBjf-_mYMvIC44=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1752927325/photo/lord-shiva-statue-on-the-banks-of-the-sacred-ganges-river-in-rishikesh-india.jpg?s=1024x1024&w=is&k=20&c=v6dsl2iSWOP02bnQg6dzNZI7V86odf5Eu6OemV4v6TU=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/825268350/photo/hardiwar.webp?b=1&s=170667a&w=0&k=20&c=O2GgcESUTZp-GfprLRKPX8OXWN_kr_fZ-31YB1NRduA=",
+          },
+        ],
         inclusions: [
-          "Accommodation in beachfront resorts",
-          "Water sports activities",
-          "Beachside bonfire dinners",
-          "Excursions to nearby attractions",
+          "Meal as per hotel Plan and drinks free too",
+          "Return airport and round trip transfers",
+          "Accommodation on twin sharing basis",
+          "Enjoy Brussels day tours. Overnight Brussels",
         ],
         tourPlan: [
           {
             day: 1,
-            name: "Beach Relaxation",
-            description: "Spend the day relaxing on the sandy beaches of Goa.",
+            name: "City Highlights",
+            description:
+              "Visit the city's main landmarks including museums, parks, and historical sites.",
+            car: [
+              {
+                destination: "New Delhi to Haridwar",
+                type: "Private Transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Haridwar",
+                location: "Haridwar, India",
+                places: ["Har Ki Pauri", "Chandi Devi", "Mansa Devi"],
+                duration: "4 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1511754863001-18d44abd0a93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Near Shiv Murti Chowk @ 12 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 2,
-            name: "Water Sports",
+            name: "Cultural Experience",
             description:
-              "Indulge in thrilling water sports activities like parasailing and jet skiing.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Haridwar",
+                destination: "Haridwar to Rishikesh",
+                type: "private transport",
+                model: "swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Rishikesh",
+                location: "Rishikesh, India",
+                places: ["Bharat Mandir", "Parmarth Niketan", "Ram Jhula"],
+                duration: "3 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1588750765220-50603c3c0c7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Tapovan @ 2 PM",
+                name: "Hotel Rishikesh Grand",
+                ratings: "3.5",
+                location: "Tapovan",
+                stayDate: "10th Aug 2024 - 11th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 3,
-            name: "Cultural Exploration",
+            name: "Cultural Experience",
             description:
-              "Explore the rich cultural heritage of Goa through its churches and temples.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Rishikesh",
+                destination: "Rishikesh to Mussoorie",
+                type: "Private transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming:
+                  "Check-in to Hotel in Near Picture Palace Bus Stand @ 2 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
         ],
-        availableFrom: new Date('2024-11-01'),
-        availableTill: new Date('2025-03-31'),
+        availableFrom: new Date("2024-11-01"),
+        availableTill: new Date("2025-03-31"),
       },
       {
         name: "Maldives",
@@ -556,34 +622,142 @@ const tours = [
         days: 5,
         nights: 4,
         title: "Beach",
+        photos: [
+          {
+            src: "https://images.unsplash.com/photo-1624358084630-f0880cb776a2?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1563124155-dbc34ba9bedb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=1024x1024&w=is&k=20&c=ogligY6KGUvn3-OUZ2d49Dk-wnu0CXf6wYddSYNaC2E=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1044399860/photo/ganga-arthi-in-the-holy-city-of-rishikesh-in-uttarakhand-india-to-worship-river-ganga-ganges.jpg?s=1024x1024&w=is&k=20&c=H4n93UJhR8LPsa_aQdnv1A_BbGWVCQBjf-_mYMvIC44=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1752927325/photo/lord-shiva-statue-on-the-banks-of-the-sacred-ganges-river-in-rishikesh-india.jpg?s=1024x1024&w=is&k=20&c=v6dsl2iSWOP02bnQg6dzNZI7V86odf5Eu6OemV4v6TU=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/825268350/photo/hardiwar.webp?b=1&s=170667a&w=0&k=20&c=O2GgcESUTZp-GfprLRKPX8OXWN_kr_fZ-31YB1NRduA=",
+          },
+        ],
         inclusions: [
-          "Accommodation in 5-star hotels",
-          "Water sports activities",
-          "Beachside bonfire dinners",
-          "Excursions to nearby attractions",
+          "Meal as per hotel Plan and drinks free too",
+          "Return airport and round trip transfers",
+          "Accommodation on twin sharing basis",
+          "Enjoy Brussels day tours. Overnight Brussels",
         ],
         tourPlan: [
           {
             day: 1,
-            name: "Beach Relaxation",
+            name: "City Highlights",
             description:
-              "Spend the day relaxing on the sandy beaches of Maldives.",
+              "Visit the city's main landmarks including museums, parks, and historical sites.",
+            car: [
+              {
+                destination: "New Delhi to Haridwar",
+                type: "Private Transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Haridwar",
+                location: "Haridwar, India",
+                places: ["Har Ki Pauri", "Chandi Devi", "Mansa Devi"],
+                duration: "4 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1511754863001-18d44abd0a93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Near Shiv Murti Chowk @ 12 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 2,
-            name: "Water Sports",
+            name: "Cultural Experience",
             description:
-              "Indulge in thrilling water sports activities like parasailing and jet skiing.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Haridwar",
+                destination: "Haridwar to Rishikesh",
+                type: "private transport",
+                model: "swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Rishikesh",
+                location: "Rishikesh, India",
+                places: ["Bharat Mandir", "Parmarth Niketan", "Ram Jhula"],
+                duration: "3 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1588750765220-50603c3c0c7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Tapovan @ 2 PM",
+                name: "Hotel Rishikesh Grand",
+                ratings: "3.5",
+                location: "Tapovan",
+                stayDate: "10th Aug 2024 - 11th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 3,
-            name: "Cultural Exploration",
+            name: "Cultural Experience",
             description:
-              "Explore the rich cultural heritage of Maldives through its churches and temples.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Rishikesh",
+                destination: "Rishikesh to Mussoorie",
+                type: "Private transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming:
+                  "Check-in to Hotel in Near Picture Palace Bus Stand @ 2 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
         ],
-        availableFrom: new Date('2024-12-01'),
-        availableTill: new Date('2025-02-28'),
+        availableFrom: new Date("2024-12-01"),
+        availableTill: new Date("2025-02-28"),
       },
       {
         name: "Phuket",
@@ -597,32 +771,142 @@ const tours = [
         days: 6,
         nights: 5,
         title: "Beach",
+        photos: [
+          {
+            src: "https://images.unsplash.com/photo-1624358084630-f0880cb776a2?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1563124155-dbc34ba9bedb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=1024x1024&w=is&k=20&c=ogligY6KGUvn3-OUZ2d49Dk-wnu0CXf6wYddSYNaC2E=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1044399860/photo/ganga-arthi-in-the-holy-city-of-rishikesh-in-uttarakhand-india-to-worship-river-ganga-ganges.jpg?s=1024x1024&w=is&k=20&c=H4n93UJhR8LPsa_aQdnv1A_BbGWVCQBjf-_mYMvIC44=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1752927325/photo/lord-shiva-statue-on-the-banks-of-the-sacred-ganges-river-in-rishikesh-india.jpg?s=1024x1024&w=is&k=20&c=v6dsl2iSWOP02bnQg6dzNZI7V86odf5Eu6OemV4v6TU=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/825268350/photo/hardiwar.webp?b=1&s=170667a&w=0&k=20&c=O2GgcESUTZp-GfprLRKPX8OXWN_kr_fZ-31YB1NRduA=",
+          },
+        ],
         inclusions: [
-          "Accommodation in beachfront resorts",
-          "Island-hopping tours",
-          "Thai cooking classes",
-          "Night market visits",
+          "Meal as per hotel Plan and drinks free too",
+          "Return airport and round trip transfers",
+          "Accommodation on twin sharing basis",
+          "Enjoy Brussels day tours. Overnight Brussels",
         ],
         tourPlan: [
           {
             day: 1,
-            name: "Beach Relaxation",
-            description: "Relax and unwind on the beautiful beaches of Phuket.",
+            name: "City Highlights",
+            description:
+              "Visit the city's main landmarks including museums, parks, and historical sites.",
+            car: [
+              {
+                destination: "New Delhi to Haridwar",
+                type: "Private Transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Haridwar",
+                location: "Haridwar, India",
+                places: ["Har Ki Pauri", "Chandi Devi", "Mansa Devi"],
+                duration: "4 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1511754863001-18d44abd0a93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Near Shiv Murti Chowk @ 12 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 2,
-            name: "Island-hopping Adventure",
-            description: "Explore nearby islands and discover hidden coves.",
+            name: "Cultural Experience",
+            description:
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Haridwar",
+                destination: "Haridwar to Rishikesh",
+                type: "private transport",
+                model: "swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Rishikesh",
+                location: "Rishikesh, India",
+                places: ["Bharat Mandir", "Parmarth Niketan", "Ram Jhula"],
+                duration: "3 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1588750765220-50603c3c0c7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Tapovan @ 2 PM",
+                name: "Hotel Rishikesh Grand",
+                ratings: "3.5",
+                location: "Tapovan",
+                stayDate: "10th Aug 2024 - 11th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 3,
-            name: "Cultural Exploration",
+            name: "Cultural Experience",
             description:
-              "Experience Thai culture through visits to temples and markets.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Rishikesh",
+                destination: "Rishikesh to Mussoorie",
+                type: "Private transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming:
+                  "Check-in to Hotel in Near Picture Palace Bus Stand @ 2 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
         ],
-        availableFrom: new Date('2024-10-01'),
-        availableTill: new Date('2025-03-31'),
+        availableFrom: new Date("2024-10-01"),
+        availableTill: new Date("2025-03-31"),
       },
     ],
     description:
@@ -630,6 +914,8 @@ const tours = [
   },
   {
     category: "Desert",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
     types: [
       {
         name: "Sahara-Desert",
@@ -642,33 +928,142 @@ const tours = [
         title: "Desert",
         days: 8,
         nights: 7,
+        photos: [
+          {
+            src: "https://images.unsplash.com/photo-1624358084630-f0880cb776a2?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1563124155-dbc34ba9bedb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=1024x1024&w=is&k=20&c=ogligY6KGUvn3-OUZ2d49Dk-wnu0CXf6wYddSYNaC2E=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1044399860/photo/ganga-arthi-in-the-holy-city-of-rishikesh-in-uttarakhand-india-to-worship-river-ganga-ganges.jpg?s=1024x1024&w=is&k=20&c=H4n93UJhR8LPsa_aQdnv1A_BbGWVCQBjf-_mYMvIC44=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1752927325/photo/lord-shiva-statue-on-the-banks-of-the-sacred-ganges-river-in-rishikesh-india.jpg?s=1024x1024&w=is&k=20&c=v6dsl2iSWOP02bnQg6dzNZI7V86odf5Eu6OemV4v6TU=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/825268350/photo/hardiwar.webp?b=1&s=170667a&w=0&k=20&c=O2GgcESUTZp-GfprLRKPX8OXWN_kr_fZ-31YB1NRduA=",
+          },
+        ],
         inclusions: [
-          "Accommodation in desert camps",
-          "Camel trekking across sand dunes",
-          "Sunset and sunrise viewing",
-          "Traditional desert meals",
+          "Meal as per hotel Plan and drinks free too",
+          "Return airport and round trip transfers",
+          "Accommodation on twin sharing basis",
+          "Enjoy Brussels day tours. Overnight Brussels",
         ],
         tourPlan: [
           {
             day: 1,
-            name: "Arrival and Desert Camp",
+            name: "City Highlights",
             description:
-              "Arrive in the Sahara and settle into your desert camp.",
+              "Visit the city's main landmarks including museums, parks, and historical sites.",
+            car: [
+              {
+                destination: "New Delhi to Haridwar",
+                type: "Private Transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Haridwar",
+                location: "Haridwar, India",
+                places: ["Har Ki Pauri", "Chandi Devi", "Mansa Devi"],
+                duration: "4 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1511754863001-18d44abd0a93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Near Shiv Murti Chowk @ 12 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 2,
-            name: "Camel Trekking",
+            name: "Cultural Experience",
             description:
-              "Embark on a camel trek across the desert, exploring its vast landscapes.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Haridwar",
+                destination: "Haridwar to Rishikesh",
+                type: "private transport",
+                model: "swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Rishikesh",
+                location: "Rishikesh, India",
+                places: ["Bharat Mandir", "Parmarth Niketan", "Ram Jhula"],
+                duration: "3 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1588750765220-50603c3c0c7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Tapovan @ 2 PM",
+                name: "Hotel Rishikesh Grand",
+                ratings: "3.5",
+                location: "Tapovan",
+                stayDate: "10th Aug 2024 - 11th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 3,
-            name: "Oasis Visit",
-            description: "Visit lush oases nestled amidst the desert sands.",
+            name: "Cultural Experience",
+            description:
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Rishikesh",
+                destination: "Rishikesh to Mussoorie",
+                type: "Private transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming:
+                  "Check-in to Hotel in Near Picture Palace Bus Stand @ 2 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
         ],
-        availableFrom: new Date('2024-03-01'),
-        availableTill: new Date('2024-05-31'),
+        availableFrom: new Date("2024-03-01"),
+        availableTill: new Date("2024-05-31"),
       },
       {
         name: "Gobi Desert",
@@ -681,28 +1076,142 @@ const tours = [
         title: "Desert",
         days: 5,
         nights: 4,
+        photos: [
+          {
+            src: "https://images.unsplash.com/photo-1624358084630-f0880cb776a2?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1563124155-dbc34ba9bedb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=1024x1024&w=is&k=20&c=ogligY6KGUvn3-OUZ2d49Dk-wnu0CXf6wYddSYNaC2E=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1044399860/photo/ganga-arthi-in-the-holy-city-of-rishikesh-in-uttarakhand-india-to-worship-river-ganga-ganges.jpg?s=1024x1024&w=is&k=20&c=H4n93UJhR8LPsa_aQdnv1A_BbGWVCQBjf-_mYMvIC44=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1752927325/photo/lord-shiva-statue-on-the-banks-of-the-sacred-ganges-river-in-rishikesh-india.jpg?s=1024x1024&w=is&k=20&c=v6dsl2iSWOP02bnQg6dzNZI7V86odf5Eu6OemV4v6TU=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/825268350/photo/hardiwar.webp?b=1&s=170667a&w=0&k=20&c=O2GgcESUTZp-GfprLRKPX8OXWN_kr_fZ-31YB1NRduA=",
+          },
+        ],
         inclusions: [
-          "Accommodation in desert lodges",
-          "Water sports activities",
-          "Cultural tours",
-          "Sunset and sunrise viewing",
+          "Meal as per hotel Plan and drinks free too",
+          "Return airport and round trip transfers",
+          "Accommodation on twin sharing basis",
+          "Enjoy Brussels day tours. Overnight Brussels",
         ],
         tourPlan: [
           {
             day: 1,
-            name: "Arrival and Desert Camp",
+            name: "City Highlights",
             description:
-              "Arrive in the Gobi Desert and settle into your desert camp.",
+              "Visit the city's main landmarks including museums, parks, and historical sites.",
+            car: [
+              {
+                destination: "New Delhi to Haridwar",
+                type: "Private Transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Haridwar",
+                location: "Haridwar, India",
+                places: ["Har Ki Pauri", "Chandi Devi", "Mansa Devi"],
+                duration: "4 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1511754863001-18d44abd0a93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Near Shiv Murti Chowk @ 12 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 2,
-            name: "Water Sports",
+            name: "Cultural Experience",
             description:
-              "Experience water sports activities like parasailing and jet skiing.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Haridwar",
+                destination: "Haridwar to Rishikesh",
+                type: "private transport",
+                model: "swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Rishikesh",
+                location: "Rishikesh, India",
+                places: ["Bharat Mandir", "Parmarth Niketan", "Ram Jhula"],
+                duration: "3 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1588750765220-50603c3c0c7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Tapovan @ 2 PM",
+                name: "Hotel Rishikesh Grand",
+                ratings: "3.5",
+                location: "Tapovan",
+                stayDate: "10th Aug 2024 - 11th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
+          },
+          {
+            day: 3,
+            name: "Cultural Experience",
+            description:
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Rishikesh",
+                destination: "Rishikesh to Mussoorie",
+                type: "Private transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming:
+                  "Check-in to Hotel in Near Picture Palace Bus Stand @ 2 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
         ],
-        availableFrom: new Date('2024-04-01'),
-        availableTill: new Date('2024-06-30'),
+        availableFrom: new Date("2024-04-01"),
+        availableTill: new Date("2024-06-30"),
       },
     ],
     description:
@@ -710,6 +1219,8 @@ const tours = [
   },
   {
     category: "Camping",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
     types: [
       {
         name: "Camping",
@@ -723,27 +1234,142 @@ const tours = [
         title: "Camping",
         days: 3,
         nights: 2,
+        photos: [
+          {
+            src: "https://images.unsplash.com/photo-1624358084630-f0880cb776a2?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1563124155-dbc34ba9bedb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=1024x1024&w=is&k=20&c=ogligY6KGUvn3-OUZ2d49Dk-wnu0CXf6wYddSYNaC2E=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1044399860/photo/ganga-arthi-in-the-holy-city-of-rishikesh-in-uttarakhand-india-to-worship-river-ganga-ganges.jpg?s=1024x1024&w=is&k=20&c=H4n93UJhR8LPsa_aQdnv1A_BbGWVCQBjf-_mYMvIC44=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/1752927325/photo/lord-shiva-statue-on-the-banks-of-the-sacred-ganges-river-in-rishikesh-india.jpg?s=1024x1024&w=is&k=20&c=v6dsl2iSWOP02bnQg6dzNZI7V86odf5Eu6OemV4v6TU=",
+          },
+          {
+            src: "https://media.istockphoto.com/id/825268350/photo/hardiwar.webp?b=1&s=170667a&w=0&k=20&c=O2GgcESUTZp-GfprLRKPX8OXWN_kr_fZ-31YB1NRduA=",
+          },
+        ],
         inclusions: [
-          "Accommodation in desert lodges",
-          "Water sports activities",
-          "Cultural tours",
-          "Sunset and sunrise viewing",
+          "Meal as per hotel Plan and drinks free too",
+          "Return airport and round trip transfers",
+          "Accommodation on twin sharing basis",
+          "Enjoy Brussels day tours. Overnight Brussels",
         ],
         tourPlan: [
           {
             day: 1,
-            name: "Arrival and Camp",
-            description: "Arrive in the desert and settle into your camp.",
+            name: "City Highlights",
+            description:
+              "Visit the city's main landmarks including museums, parks, and historical sites.",
+            car: [
+              {
+                destination: "New Delhi to Haridwar",
+                type: "Private Transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Haridwar",
+                location: "Haridwar, India",
+                places: ["Har Ki Pauri", "Chandi Devi", "Mansa Devi"],
+                duration: "4 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1511754863001-18d44abd0a93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Near Shiv Murti Chowk @ 12 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
           {
             day: 2,
-            name: "Camping Activities",
+            name: "Cultural Experience",
             description:
-              "Explore the desert's natural beauty and enjoy outdoor activities.",
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Haridwar",
+                destination: "Haridwar to Rishikesh",
+                type: "private transport",
+                model: "swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            sightseeing: [
+              {
+                name: "Rishikesh",
+                location: "Rishikesh, India",
+                places: ["Bharat Mandir", "Parmarth Niketan", "Ram Jhula"],
+                duration: "3 hr",
+                placesCovered: 3,
+                image:
+                  "https://images.unsplash.com/photo-1588750765220-50603c3c0c7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming: "Check-in to Hotel in Tapovan @ 2 PM",
+                name: "Hotel Rishikesh Grand",
+                ratings: "3.5",
+                location: "Tapovan",
+                stayDate: "10th Aug 2024 - 11th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
+          },
+          {
+            day: 3,
+            name: "Cultural Experience",
+            description:
+              "Explore the local culture through food, music, and art.",
+            car: [
+              {
+                checkout: "Checkout from Hotel in Rishikesh",
+                destination: "Rishikesh to Mussoorie",
+                type: "Private transport",
+                model: "Swift",
+                facilities: "3 seater, 2 Luggage Bags, First Aid",
+                image:
+                  "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D",
+              },
+            ],
+            hotels: [
+              {
+                timming:
+                  "Check-in to Hotel in Near Picture Palace Bus Stand @ 2 PM",
+                name: "Umra Grace Hotel",
+                ratings: "3",
+                location: "near Shiv Murti Chowk",
+                stayDate: "9th Aug 2024 - 10th Aug 2024",
+                image:
+                  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww",
+              },
+            ],
           },
         ],
-        availableFrom: new Date('2024-05-01'),
-        availableTill: new Date('2024-09-30'),
+        availableFrom: new Date("2024-05-01"),
+        availableTill: new Date("2024-09-30"),
       },
     ],
     description:
