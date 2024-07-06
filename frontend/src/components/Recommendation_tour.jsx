@@ -25,7 +25,7 @@ const Recommendation_tour = () => {
             );
           })}
         </div>
-        <div className="flex  mt-6">
+        <div className="flex  mt-6 justify-center">
             <a href="/tour">
           <button className="px-6 py-3 font-semibold text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all">
            View More

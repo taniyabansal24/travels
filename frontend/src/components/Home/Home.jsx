@@ -1,7 +1,7 @@
 import Hero from "../Hero";
 import WhyChooseUs from "../WhyChooseUs.jsx";
 import Testimonial from "../Testimonial";
-import Services from "../Services";
+//import Services from "../Services";
 import Recommendation_tour from "../Recommendation_tour";
 import Recommendation_hotel from "../Recommendation_hotel";
 import Offers from "./Offers/Offers.jsx";
@@ -21,7 +21,7 @@ function Home() {
         <WhyChooseUs />
         <About_us />
         <Testimonial />
-        <Services />
+      
       </div>
     </>
   );
