@@ -74,7 +74,7 @@ const Blog = () => {
         <h1 className="text-2xl font-bold my-4 text-center">Blogs</h1>
         <hr className="my-4" />
         <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {blogData.map((item, i) => {
+          {blogData?.map((item, i) => {
             // console.log(item.id, i);
             return (
               <Card

@@ -40,7 +40,7 @@ const TourSection = ({ data, category }) => {
         <h1 className="text-2xl font-bold my-4">{category}</h1>
         <hr className="my-4" />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {data.map((item, i) => (
+          {data?.map((item, i) => (
             <Card
               key={i}
               id={item._id}

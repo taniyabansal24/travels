@@ -140,7 +140,7 @@ const ShowBlog = () => {
         </div>
 
         <div className="grid grid-cols-9 mt-12 gap-4  p-2   bg-gray-100 container  mx-auto">
-          {blogData.map((blog, i) => (
+          {blogData?.map((blog, i) => (
             <div
               className="col-span-12 md:col-span-6  bg-gry-100 rounded-lg lg:col-span-3 mb- border"
               key={i}
