@@ -33,17 +33,25 @@ const BlogPage = () => {
     return <div>Loading...</div>;
   }
 
-    // const backendUrl = "http://localhost:5000";
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+     const backendUrl = "http://localhost:5000";
+    //const backendUrl = import.meta.env.VITE_BACKEND_URL;
  
   return (
     <div className="max-w-4xl mx-auto py-8">
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <img
-        src={`${backendUrl}${blogPost.image}`}
+      {import.meta.env.VITE_NODE_ENV == "development" ? (
+           <img
+           src={`${backendUrl}${blogPost.image}`}
+             alt={blogPost.title}
+             className="w-full h-[400px] object-cover object-center"
+           />
+          ) : (
+            <img
+        src={blogPost.image}
           alt={blogPost.title}
           className="w-full h-[400px] object-cover object-center"
         />
+          )}
         <div className="p-6">
           <h2 className="text-3xl font-bold mb-2">{blogPost.title}</h2>
           <p className="text-gray-600 mb-2">By {blogPost.author}</p>

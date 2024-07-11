@@ -27,5 +27,7 @@ router
   .get(protect, admin, getUserById)
   .put(protect, admin, updateUser);
 
+  router.route('/isAdmin').get(protect, admin, getUserProfile)
+
 
 export default router;

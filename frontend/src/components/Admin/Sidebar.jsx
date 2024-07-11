@@ -15,7 +15,7 @@ const Sidebar = () => {
 
     const fetchUser = async () => {
       try {
-        const { data } = await axios.get("/api/users/profile"); // Endpoint to fetch user profile
+        const { data } = await axios.get("/api/users/isAdmin"); // Endpoint to fetch user profile
         setUser(data); // Assuming response contains user data when authenticated
       } catch (error) {
         console.error("User not authenticated");
