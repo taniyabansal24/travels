@@ -92,26 +92,89 @@ function App() {
         </>
       ),
     },
+    // {
+    //   path: "/tour",
+    //   element: (
+    //     <>
+    //       <Navbar />
+    //       {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
+    //       <Tour />
+    //       <Footer />
+    //     </>
+    //   ),
+    // },
+    // {
+    //   path: `/tour/:id`,
+    //   element: (
+    //     <>
+    //       <Navbar />
+    //       {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
+
+    //       <Ptour />
+
+    //       <Footer />
+    //     </>
+    //   ),
+    // },
     {
       path: "/tour",
       element: (
         <>
           <Navbar />
-          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
+          <div className="fake-header h-[15vh] bg-transparent"></div>
           <Tour />
           <Footer />
         </>
       ),
     },
     {
-      path: `/tour/:id`,
+      path: `/tour/${data[0].title}/:id`,
       element: (
         <>
           <Navbar />
-          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
+          <div className="fake-header h-[15vh] bg-transparent"></div>
 
-          <Ptour />
+          <Ptour data={data[0].types} />
 
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: `/tour/${data[1].title}/:id`,
+
+      element: (
+        <>
+          <Navbar />
+          <div className="fake-header h-[15vh] bg-transparent"></div>
+
+          <Ptour data={data[1].types} />
+
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: `/tour/${data[2].title}/:id`,
+      element: (
+        <>
+          <Navbar />
+          <div className="fake-header h-[15vh] bg-transparent"></div>
+
+          <Ptour data={data[2].types} />
+
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: `/tour/${data[3].title}/:id`,
+      element: (
+        <>
+          <Navbar />
+          <div className="fake-header h-[15vh] bg-transparent"></div>
+
+          <Ptour data={data[3].types} />
           <Footer />
         </>
       ),

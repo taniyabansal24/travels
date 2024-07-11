@@ -121,6 +121,7 @@ const ShowBlog = () => {
       try {
         const { data } = await axios.get("/api/blog");
         setBlogData(data);
+        console.log(data)
       } catch (error) {
         console.error("Error fetching data:", error);
       }
