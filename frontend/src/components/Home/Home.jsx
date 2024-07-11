@@ -14,14 +14,13 @@ function Home() {
       <div>
         {/* <Navbar /> */}
         <Hero />
-       <Offers />
+        <Offers />
         <Recommendation_tour />
         <Recommendation_hotel />
         <ShowBlog />
         <WhyChooseUs />
         <About_us />
         <Testimonial />
-      
       </div>
     </>
   );
