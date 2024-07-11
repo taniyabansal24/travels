@@ -1,3 +1,4 @@
+import hotel from '../../assets/hotel5.avif'
 const data = [
     {
       id: 1,
@@ -9,7 +10,7 @@ const data = [
           no_hotels: 130,
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-          image: "https://source.unsplash.com/random",
+          image: hotel,
           price: "$50 per person",
           rating: 5,
           reviews: 100,
@@ -49,7 +50,7 @@ const data = [
           no_hotels: 130,
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-          image: "https://source.unsplash.com/random",
+          image: hotel,
           price: "$1000 per person",
           rating: 4.8,
           reviews: 120,
@@ -90,7 +91,7 @@ const data = [
           no_hotels: 30,
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-          image: "https://source.unsplash.com/random",
+          image: hotel,
           price: "$500 per person",
           rating: 4.5,
           reviews: 80,
@@ -121,7 +122,7 @@ const data = [
       ],
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-      image: "https://source.unsplash.com/random",
+      image: hotel,
     },
     {
       id: 2,
@@ -133,7 +134,7 @@ const data = [
           no_hotels: 110,
           description:
             "Enjoy the sun, sand, and sea in the tropical paradise of Goa.",
-          image: "https://source.unsplash.com/random",
+          image: hotel,
           price: "$500 per person",
           rating: 4.7,
           reviews: 90,
@@ -172,7 +173,7 @@ const data = [
           no_hotels: 50,
           description:
             "Experience the beauty of the tropical paradise of Maldives.",
-          image: "https://source.unsplash.com/random",
+          image: hotel,
           price: "$600 per person",
           rating: 4.5,
           reviews: 80,
@@ -212,7 +213,7 @@ const data = [
           no_hotels: 30,
           description:
             "Explore the stunning beaches and lively nightlife of Phuket.",
-          image: "https://source.unsplash.com/random",
+          image: hotel,
           price: "$600 per person",
           rating: 4.5,
           reviews: 80,
@@ -247,7 +248,7 @@ const data = [
       ],
       description:
         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-      image: "https://source.unsplash.com/random",
+      image: hotel,
     },
     {
       id: 3,
@@ -258,7 +259,7 @@ const data = [
           name: "Sahara-Desert",
           no_hotels: 70,
           description: "Experience the vastness and beauty of the Sahara Desert.",
-          image: "https://source.unsplash.com/random",
+          image: hotel,
           price: "$1200 per person",
           rating: 4.9,
           reviews: 110,
@@ -296,7 +297,7 @@ const data = [
           name: "Gobi Desert",
           no_hotels: 19,
           description: "Experience the beauty and majesty of the Gobi Desert.",
-          image: "https://source.unsplash.com/random",
+          image: hotel,
           price: "$1200 per person",
           rating: 4.7,
           reviews: 90,
@@ -327,7 +328,7 @@ const data = [
       ],
       description:
         "Sed et urna id dolor elementum ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-      image: "https://source.unsplash.com/random",
+      image: hotel,
     },
     {
       id: 4,
@@ -339,7 +340,7 @@ const data = [
           no_hotels: 19,
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-          image: "https://source.unsplash.com/random",
+          image: hotel,
           price: "$1200 per person",
           rating: 4.9,
           reviews: 110,

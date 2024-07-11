@@ -362,6 +362,14 @@
 // ];
 
 // export default data;
+import tour1 from '../../assets/tour1.jpg';
+import tour2 from '../../assets/tour2.jpg';
+import tour3 from '../../assets/tour3.jpg';
+import tour4 from '../../assets/tour4.jpg';
+import car1 from '../../assets/car1.avif';
+import hotel5 from '../../assets/hotel5.avif';
+
+
 const data = [
   {
     id: 1,
@@ -374,28 +382,29 @@ const data = [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
         price: "$50 per person",
         rating: 5,
+        image: tour4,
         reviews: 100,
         location: "Haridwar, Uttrakhand",
         duration: "10 Days",
         title: "Mountain",
         "photos": [
           {
-            "src": "https://images.unsplash.com/photo-1624358084630-f0880cb776a2?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            "src": tour1
           },
           {
-            "src": "https://images.unsplash.com/photo-1563124155-dbc34ba9bedb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D"
+            "src": tour2
           },
           {
-            "src": "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=1024x1024&w=is&k=20&c=ogligY6KGUvn3-OUZ2d49Dk-wnu0CXf6wYddSYNaC2E="
+            "src": tour3
           },
           {
-            "src": "https://media.istockphoto.com/id/1044399860/photo/ganga-arthi-in-the-holy-city-of-rishikesh-in-uttarakhand-india-to-worship-river-ganga-ganges.jpg?s=1024x1024&w=is&k=20&c=H4n93UJhR8LPsa_aQdnv1A_BbGWVCQBjf-_mYMvIC44="
+            "src": tour4
           },
           {
-            "src": "https://media.istockphoto.com/id/1752927325/photo/lord-shiva-statue-on-the-banks-of-the-sacred-ganges-river-in-rishikesh-india.jpg?s=1024x1024&w=is&k=20&c=v6dsl2iSWOP02bnQg6dzNZI7V86odf5Eu6OemV4v6TU="
+            "src": tour1
           },
           {
-            "src": "https://media.istockphoto.com/id/825268350/photo/hardiwar.webp?b=1&s=170667a&w=0&k=20&c=O2GgcESUTZp-GfprLRKPX8OXWN_kr_fZ-31YB1NRduA="
+            "src": tour2
           }
         ],
         inclusions: [
@@ -414,7 +423,7 @@ const data = [
                 "type": "Private Transport",
                 "model": "Swift",
                 "facilities": "3 seater, 2 Luggage Bags, First Aid",
-                "image": "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D"
+                "image": car1
               }
             ],
             "sightseeing": [
@@ -424,7 +433,7 @@ const data = [
                 "places": ["Har Ki Pauri", "Chandi Devi", "Mansa Devi"],
                 "duration": "4 hr",
                 "placesCovered": 3,
-                "image": "https://images.unsplash.com/photo-1511754863001-18d44abd0a93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D"
+                "image": tour2
               }
             ],
             "hotels": [
@@ -434,7 +443,7 @@ const data = [
                 "ratings": "3",
                 "location": "near Shiv Murti Chowk",
                 "stayDate": "9th Aug 2024 - 10th Aug 2024",
-                "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww"
+                "image": hotel5
               }
             ]
           },
@@ -448,7 +457,7 @@ const data = [
                 "type": "private transport",
                 "model": "swift",
                 "facilities": "3 seater, 2 Luggage Bags, First Aid",
-                "image": "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D"
+                "image": car1
               }
             ],
             "sightseeing": [
@@ -458,7 +467,7 @@ const data = [
                 "places": ["Bharat Mandir", "Parmarth Niketan", "Ram Jhula"],
                 "duration": "3 hr",
                 "placesCovered": 3,
-                "image": "https://images.unsplash.com/photo-1588750765220-50603c3c0c7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFyaWR3YXJ8ZW58MHx8MHx8fDA%3D"
+                "image": tour2
               }
             ],
             "hotels": [
@@ -468,7 +477,7 @@ const data = [
                 "ratings": "3.5",
                 "location": "Tapovan",
                 "stayDate": "10th Aug 2024 - 11th Aug 2024",
-                "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww"
+                "image": hotel5
               }
             ]
           },
@@ -482,7 +491,7 @@ const data = [
                 "type": "Private transport",
                 "model": "Swift",
                 "facilities": "3 seater, 2 Luggage Bags, First Aid",
-                "image": "https://images.unsplash.com/photo-1511125357779-27038c647d9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGNhcnxlbnwwfHwwfHx8MA%3D%3D"
+                "image": car1
               }
             ],
             "hotels": [
@@ -492,7 +501,7 @@ const data = [
                 "ratings": "3",
                 "location": "near Shiv Murti Chowk",
                 "stayDate": "9th Aug 2024 - 10th Aug 2024",
-                "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww"
+                "image": hotel5
               }
             ]
           }
@@ -503,7 +512,7 @@ const data = [
         name: "Ladakh",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-        image: "https://source.unsplash.com/random",
+        image: tour3,
         price: "$1000 per person",
         rating: 4.8,
         reviews: 120,
@@ -543,7 +552,7 @@ const data = [
         name: "Kashmir",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-        image: "https://source.unsplash.com/random",
+        image: tour1,
         price: "$500 per person",
         rating: 4.5,
         reviews: 80,
@@ -574,7 +583,7 @@ const data = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-    image: "https://source.unsplash.com/random",
+    image: tour3,
   },
   {
     id: 2,
@@ -585,7 +594,7 @@ const data = [
         name: "Goa",
         description:
           "Enjoy the sun, sand, and sea in the tropical paradise of Goa.",
-        image: "https://source.unsplash.com/random",
+        image: tour1,
         price: "$500 per person",
         rating: 4.7,
         reviews: 90,
@@ -623,7 +632,7 @@ const data = [
         name: "Maldives",
         description:
           "Experience the beauty of the tropical paradise of Maldives.",
-        image: "https://source.unsplash.com/random",
+        image: tour1,
         price: "$600 per person",
         rating: 4.5,
         reviews: 80,
@@ -662,7 +671,7 @@ const data = [
         name: "Phuket",
         description:
           "Explore the stunning beaches and lively nightlife of Phuket.",
-        image: "https://source.unsplash.com/random",
+        image: tour2,
         price: "$600 per person",
         rating: 4.5,
         reviews: 80,
@@ -697,7 +706,7 @@ const data = [
     ],
     description:
       "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    image: "https://source.unsplash.com/random",
+    image: tour3,
   },
   {
     id: 3,
@@ -707,7 +716,7 @@ const data = [
         id: 1,
         name: "Sahara-Desert",
         description: "Experience the vastness and beauty of the Sahara Desert.",
-        image: "https://source.unsplash.com/random",
+        image: tour4,
         price: "$1200 per person",
         rating: 4.9,
         reviews: 110,
@@ -744,7 +753,7 @@ const data = [
         id: 2,
         name: "Gobi Desert",
         description: "Experience the beauty and majesty of the Gobi Desert.",
-        image: "https://source.unsplash.com/random",
+        image: tour2,
         price: "$1200 per person",
         rating: 4.7,
         reviews: 90,
@@ -775,7 +784,7 @@ const data = [
     ],
     description:
       "Sed et urna id dolor elementum ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    image: "https://source.unsplash.com/random",
+    image: tour3,
   },
   {
     id: 4,
@@ -786,7 +795,7 @@ const data = [
         name: "Camping",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et urna id dolor elementum ultrices.",
-        image: "https://source.unsplash.com/random",
+        image: tour4,
         price: "$1200 per person",
         rating: 4.9,
         reviews: 110,

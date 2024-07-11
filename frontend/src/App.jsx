@@ -121,7 +121,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          {/* <div className="fake-header h-[15vh] bg-transparent"></div> */}
+          <div className="fake-header h-[15vh] bg-transparent"></div>
           <Tour />
           <Footer />
         </>
@@ -132,7 +132,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          {/* <div className="fake-header h-[15vh] bg-transparent"></div> */}
+          <div className="fake-header h-[15vh] bg-transparent"></div>
 
           <Ptour data={data[0].types} />
 
@@ -146,7 +146,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          {/* <div className="fake-header h-[15vh] bg-transparent"></div> */}
+          <div className="fake-header h-[15vh] bg-transparent"></div>
 
           <Ptour data={data[1].types} />
 
@@ -159,7 +159,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          {/* <div className="fake-header h-[15vh] bg-transparent"></div> */}
+          <div className="fake-header h-[15vh] bg-transparent"></div>
 
           <Ptour data={data[2].types} />
 
@@ -172,7 +172,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          {/* <div className="fake-header h-[15vh] bg-transparent"></div> */}
+          <div className="fake-header h-[15vh] bg-transparent"></div>
 
           <Ptour data={data[3].types} />
           <Footer />
