@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "boxicons/css/boxicons.min.css";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.png";
 
 const DNavbar = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prevState) => !prevState);
@@ -13,11 +13,7 @@ const DNavbar = () => {
     <header className="bg-white fixed w-full  shadow-md z-10">
       <div className=" flex justify-between items-center h-[9vh]  w-[90%]  mx-auto  px-5 py-3  z-10 border-3">
         <div className="rounded-lg overflow-hidden w-[3rem] md:w-[5rem] h-[3rem] md:h-[4rem]">
-          <img
-            className="w-full h-full object-cover"
-            src={logo}
-            alt="Logo"
-          />
+          <img className="w-full h-full object-cover" src={logo} alt="Logo" />
         </div>
         <div className=" hidden md:flex flex-grow justify-center gap-10">
           <Link to="/" className="text-gray-600 hover:text-black">
@@ -86,7 +82,7 @@ const DNavbar = () => {
                 Hotels
               </a>
               <Link
-               to={"/admin"}
+                to={"/admin"}
                 className="text-gray-300 block py-2 px-4 hover:text-white"
               >
                 Blogs
@@ -96,7 +92,7 @@ const DNavbar = () => {
         )}
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default DNavbar
+export default DNavbar;

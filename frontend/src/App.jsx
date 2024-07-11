@@ -1,7 +1,7 @@
 import "./index.css";
 import "./App.css";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 
 // import Hero from "./components/Hero";
@@ -45,22 +45,18 @@ import EditPackage from "./components/Admin/Tour/EditPackage";
 import Login from "./components/Login/Login";
 import SubNavbar from "./components/SubNavbar";
 
-
 // import Tourpage from "./components/test/Tourpage";
 function App() {
-
-
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <>
-         <Navbar />
+          <Navbar />
           {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
-        
+
           <Home />
-          <Footer /> 
-         
+          <Footer />
         </>
       ),
     },
@@ -114,7 +110,7 @@ function App() {
           <Navbar />
           {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
 
-          <Ptour /> 
+          <Ptour />
 
           <Footer />
         </>
@@ -133,14 +129,14 @@ function App() {
         </>
       ),
     },
-   // {
+    // {
     //   path: `/tour/Mountain/:id`,
     //   element: (
     //     <>
     //       <Navbar />
     //       <div className="fake-header h-[15vh] bg-transparent"></div>
 
-    //       <Ptour /> 
+    //       <Ptour />
 
     //       <Footer />
     //     </>
@@ -153,7 +149,7 @@ function App() {
     //       <Navbar />
     //       <div className="fake-header h-[15vh] bg-transparent"></div>
 
-    //       <Ptour /> 
+    //       <Ptour />
 
     //       <Footer />
     //     </>
@@ -166,7 +162,7 @@ function App() {
     //       <Navbar />
     //       <div className="fake-header h-[15vh] bg-transparent"></div>
 
-    //       <Ptour /> 
+    //       <Ptour />
 
     //       <Footer />
     //     </>
@@ -179,7 +175,7 @@ function App() {
     //       <Navbar />
     //       <div className="fake-header h-[15vh] bg-transparent"></div>
 
-    //       <Ptour /> 
+    //       <Ptour />
 
     //       <Footer />
     //     </>
@@ -254,7 +250,7 @@ function App() {
         <>
           <Navbar />
           {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
- 
+
           <Photel data={data[1].types} />
           <Footer />
         </>
@@ -364,10 +360,10 @@ function App() {
       path: "/admin/tour/allpackagecategory",
       element: (
         <>
-        <Sidebar />
-        <AllCategory />
+          <Sidebar />
+          <AllCategory />
         </>
-      )
+      ),
     },
     {
       path: "/admin/tour/category/edit/:categoryId",
@@ -387,11 +383,10 @@ function App() {
         </>
       ),
     },
-    
   ]);
   return (
     <>
-    <ToastContainer />
+      <ToastContainer />
       <div>
         {/* <Navbar /> */}
 
