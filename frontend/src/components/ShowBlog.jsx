@@ -68,7 +68,7 @@ const BlogItem = ({ blog }) => {
   return (
     <article className="rounded-lg">
       <div className="relative">
-        {import.meta.env.VITE_NODE_ENV == "development" ? (
+        {/* {import.meta.env.VITE_NODE_ENV == "development" ? (
            <img
            src={`${backendUrl}${image}`}
            alt={title}
@@ -80,7 +80,12 @@ const BlogItem = ({ blog }) => {
            alt={title}
           className="h-64 w-full rounded-lg shadow-lg dark:shadow-none"
         />
-        )}
+        )} */}
+         <img
+           src={`${backendUrl}${image}`}
+           alt={title}
+          className="h-64 w-full rounded-lg shadow-lg dark:shadow-none"
+        />
 
         <div className="absolute bottom-2 left-2 text-lg leading-6 px-6 py-3 font-black text-white bg-white dark:bg-slate-800 bg-opacity-80 dark:bg-opacity-80 rounded-lg">
           {date}
