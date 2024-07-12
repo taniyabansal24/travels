@@ -7,7 +7,7 @@ import choice from '../assets/choice.png';
 
 const About_us = () => {
   return (
-    <div className="mx-auto flex flex-col justify-between md:flex-row">
+    <div className=" flex flex-col justify-between md:flex-row container">
         <div className="text w-full md:w-3/6 my-12 px-4">
         <h2 className="text-4xl font-semibold capitalize text-cyan-900">About Us</h2>
             <h3 className="text-4xl my-4 font-bold font-serif">Planning a trip should be very exciting adventure</h3>
