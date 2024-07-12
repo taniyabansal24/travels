@@ -1,21 +1,23 @@
 import React from "react";
 import cab from '../assets/i1.jpg';
 import hotel from '../assets/i3.jpg';
-import tour from '../assets/i4.jpg'
+import tour from '../assets/i4.jpg';
+import png1 from '../assets/tourism.png';
+import choice from '../assets/choice.png';
 
 const About_us = () => {
   return (
-    <div className="mx-auto px-12 flex flex-col justify-between md:flex-row">
+    <div className="mx-auto flex flex-col justify-between md:flex-row">
         <div className="text w-full md:w-3/6 my-12 px-4">
         <h2 className="text-4xl font-semibold capitalize text-cyan-900">About Us</h2>
             <h3 className="text-4xl my-4 font-bold font-serif">Planning a trip should be very exciting adventure</h3>
             <p className="my-4 text-zinc-700">We're dedicated to offering exceptional value for your travel
                 investment. Our relationships with trusted travel partners
             </p>
-            <div className="cards">
-                <div className="card flex">
+            <div className="cards mt-3 ">
+                <div className="card flex items-center p-2 ">
                     <div className="logo  bg-zinc-200 rounded-full max-w-12 max-h-12 mr-5">
-                      <img className="p-2" src="./world.png" alt=""/>
+                      <img className="p-2" src={png1} alt=""/>
                     </div>
                     <div className="cards-details">
                       <h5 className="text-2xl font-semibold text-zinc-950">National Tours</h5>
@@ -25,9 +27,9 @@ const About_us = () => {
                       </p>
                     </div>
                 </div>
-                <div className="card flex mt-4">
+                <div className="card flex mt-4 items-center p-2">
                     <div className="logo  bg-zinc-200 rounded-full max-w-12 max-h-12 mr-5">
-                      <img className="p-2" src="./choice.png" alt="" />
+                      <img className="p-2" src={choice} alt="" />
                     </div>
                     <div className="cards-details">
                       <h5 className="text-2xl font-semibold text-zinc-950">Multiple Options to Choose</h5>
