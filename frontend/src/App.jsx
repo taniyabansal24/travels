@@ -44,6 +44,8 @@ import EditCategory from "./components/Admin/Tour/EditCategory";
 import EditPackage from "./components/Admin/Tour/EditPackage";
 import Login from "./components/Login/Login";
 import SubNavbar from "./components/SubNavbar";
+import HotelSidebar from "./components/Hotel/HotelSidebar";
+import HotelList from "./components/Hotel/HotelList";
 
 // import Tourpage from "./components/test/Tourpage";
 function App() {
@@ -316,6 +318,19 @@ function App() {
 
           <Photel data={data[1].types} />
           <Footer />
+        </>
+      ),
+    },
+
+    {
+      path: "/h",
+      element: (
+        <>
+          <Navbar />
+          <div className="flex container">
+            <HotelSidebar />
+            <HotelList />
+          </div>
         </>
       ),
     },

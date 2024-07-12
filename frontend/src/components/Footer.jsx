@@ -1,58 +1,203 @@
-// Footer.js
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
-// import React from "react";
-import img3 from "../assets/s1.jpg";
-
-function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-4  w-full">
-      <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4  w-[90%] m">
-        <div className="flex flex-col items-start mb-4 lg:mb-0 lg:mr-8">
-          <h3 className="text-lg font-bold text-center">About Us</h3>
-          <div>
-            <img src={img3} className="rounded h-[7rem] mt-3" alt="" />
+    <section className="bg-whiteborder border border-black shadow-lg   text-gray-800 py-16 flex flex-col justify-center items-center">
+      <div className=" mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 text-center md:text-left mb-12">
+          <div className="col-span-1 lg:col-span-2">
+            <h2 className="font-bold text-2xl">Travel Squads</h2>
+            <p className="opacity-50 mt-3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <h5 className="mt-8 mb-3">Follow Us</h5>
+            <ul className="flex justify-center md:justify-start space-x-3 mb-4">
+              <li>
+                <a
+                  href="#"
+                  className="bg-gray-200 text-gray-800 shadow rounded-full px-3 py-2 hover:bg-blue-600 hover:text-white transition-opacity duration-300"
+                >
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="bg-gray-200 text-gray-800 shadow rounded-full px-3 py-2 hover:bg-blue-600 hover:text-white transition-opacity duration-300"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#"
+                  className="bg-gray-200 text-gray-800 shadow rounded-full px-3 py-2 hover:bg-blue-600 hover:text-white transition-opacity duration-300"
+                >
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="bg-gray-200 text-gray-800 shadow rounded-full px-3 py-2 hover:bg-blue-600 hover:text-white transition-opacity duration-300"
+                >
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+              </li>
+            </ul>
           </div>
-          <p className="mt-2 ml-2   ">
-            Some information about your company <br /> or website.
-          </p>
+          <div>
+            <h5 className="mb-3">Menu</h5>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                >
+                  Hotels
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                >
+                  Tours
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                >
+                  Cab
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                >
+                  Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="mb-3">Blog</h5>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="mb-3">Company</h5>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="mb-3">Services</h5>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                ></a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="flex flex-col mb-4 lg:mb-0 lg:mr-8">
-          <h3 className="text-lg font-bold">Links</h3>
-          <ul className="mt-2 ">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Tour</a>
-            </li>
-            <li>
-              <a href="#">Hotel</a>
-            </li>
-            <li>
-              <a href="#">Hire a cab</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-          </ul>
-        </div>
-        <div className="flex flex-col ">
-          <h3 className="text-lg font-bold">Follow Us</h3>
-          <div className="mt-2 flex space-x-4 ml-[-.5rem]">
-            <a href="#" className="text-white hover:text-gray-400 ">
-              <i className="bx bxl-facebook text-3xl"></i>
-            </a>
-            <a href="#" className="text-white hover:text-gray-400">
-              <i className="bx bxl-instagram text-3xl"></i>
-            </a>
-            <a href="#" className="text-white hover:text-gray-400">
-              <i className="bx bxl-twitter text-3xl"></i>
-            </a>
+        <hr className="border-t border-gray-300" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-between items-center text-center lg:text-left mt-4">
+          <div className="md:col-span-1">
+            <p className="opacity-50 mb-0 mt-1">
+              &copy; Travel Squads, All rights reserved
+            </p>
+          </div>
+          <div className="md:col-span-1">
+            <ul className="flex justify-center md:justify-end space-x-4 mt-1">
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                >
+                  Privacy
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#!"
+                  className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+                >
+                  Terms
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
   );
-}
+};
 
 export default Footer;
