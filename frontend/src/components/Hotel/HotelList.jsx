@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function HotelCard({ hotel }) {
   return (
-    <div className="border border-red-200 items-center justify-center rounded-lg p-4 shadow bg-white mb-4 flex flex-col md:flex-row ">
+    <Link to='/hotelDetails' ><div className="border border-red-200 items-center justify-center rounded-lg p-4 shadow bg-white mb-4 flex flex-col md:flex-row ">
       <div className="md:flex-shrink-0  ">
         <img
           src={hotel.imageUrl}
@@ -56,12 +57,12 @@ function HotelCard({ hotel }) {
             </p>
             <p className="text-sm">Per Night</p>
           </div>
-          <button className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button  className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Login to Book Now & Pay Later!
           </button>
         </div>
       </div>
-    </div>
+    </div></Link>
   );
 }
 

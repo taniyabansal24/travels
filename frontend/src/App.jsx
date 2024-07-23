@@ -46,6 +46,7 @@ import Login from "./components/Login/Login";
 import SubNavbar from "./components/SubNavbar";
 import HotelSidebar from "./components/Hotel/HotelSidebar";
 import HotelList from "./components/Hotel/HotelList";
+import Hotelview from "./components/Hotel/Hotelview";
 
 // import Tourpage from "./components/test/Tourpage";
 function App() {
@@ -331,6 +332,17 @@ function App() {
             <HotelSidebar />
             <HotelList />
           </div>
+        </>
+      ),
+    },
+    {
+      path: "/hotelDetails",
+      element: (
+        <>
+          <Navbar />
+      
+           <Hotelview /> 
+      
         </>
       ),
     },

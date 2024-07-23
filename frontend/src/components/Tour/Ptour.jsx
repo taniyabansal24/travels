@@ -478,7 +478,7 @@ const Ptour = (props) => {
           )}
           <div className="hotelImages">
             {tourPackage.photos.map((photo, i) => (
-              <div className="hotelImgWrapper" key={i}>
+              <div className="hotelImgWrapper w-[33%] " key={i}>
                 <img
                   onClick={() => handleOpen(i)}
                   src={photo.src}

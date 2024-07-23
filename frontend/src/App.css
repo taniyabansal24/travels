@@ -26,3 +26,6 @@ html, body {
 
   overflow: auto;
 }
+.container{
+  margin-inline: auto;
+}
