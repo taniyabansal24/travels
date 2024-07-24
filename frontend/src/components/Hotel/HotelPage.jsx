@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import HotelSidebar from './HotelSidebar';
 import HotelList from './HotelList';
+import { useLocation } from 'react-router-dom';
 
 function HotelPage() {
-  const [filters, setFilters] = useState({
+  const location = useLocation();
+  const initialFilters = location.state || {
+    //city: "",
+    checkin: "",
+    checkout: "",
+    guests: "",
+    price: "",
     location: "",
     minBudget: "",
     maxBudget: "",
@@ -12,7 +19,26 @@ function HotelPage() {
     propertyType: "",
     amenities: "",
     facilities: [],
-  });
+    // location: "",
+    // minBudget: "",
+    // maxBudget: "",
+    // starRating: "",
+    // guestRating: "",
+    // propertyType: "",
+    // amenities: "",
+    // facilities: [],
+  };
+  const [filters, setFilters] = useState(initialFilters);
+  // const [filters, setFilters] = useState({
+  //   location: "",
+  //   minBudget: "",
+  //   maxBudget: "",
+  //   starRating: "",
+  //   guestRating: "",
+  //   propertyType: "",
+  //   amenities: "",
+  //   facilities: [],
+  // });
 
   return (
     <div className="flex ">

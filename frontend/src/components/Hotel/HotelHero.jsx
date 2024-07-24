@@ -6,11 +6,19 @@ import { useNavigate } from "react-router-dom";
 
 const HotelHero = () => {
   const [formData, setFormData] = useState({
-    city: "",
+    //city: "",
     checkin: "",
     checkout: "",
     guests: "",
-    price: ""
+    price: "",
+    location: "",
+    minBudget: "",
+    maxBudget: "",
+    starRating: "",
+    guestRating: "",
+    propertyType: "",
+    amenities: "",
+    facilities: [],
   });
 
   const navigate = useNavigate();
@@ -51,10 +59,10 @@ const HotelHero = () => {
               <div className="flex items-center relative mt-1">
                 <input
                   type="text"
-                  id="city"
+                  id="location"
                   placeholder="Enter name here..."
                   className="border rounded p-2 flex-grow"
-                  value={formData.city}
+                  value={formData.location}
                   onChange={handleChange}
                 />
                 <GrLocation className="icon absolute top-3 right-2 " />
