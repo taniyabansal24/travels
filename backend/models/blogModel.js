@@ -27,6 +27,10 @@ const blogSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    featured: {
+      type: Boolean,
+      required: true,
+    },
   },
   {
     timestamps: true,

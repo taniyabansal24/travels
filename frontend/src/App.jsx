@@ -3,6 +3,8 @@ import "./App.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
+import Hotelview from "./components/Hotel/Hotelview";
+
 
 // import Hero from "./components/Hero";
 // import WhyChooseUs from "./components/Whyus";
@@ -46,7 +48,8 @@ import Login from "./components/Login/Login";
 import SubNavbar from "./components/SubNavbar";
 import HotelSidebar from "./components/Hotel/HotelSidebar";
 import HotelList from "./components/Hotel/HotelList";
-import Hotelview from "./components/Hotel/Hotelview";
+import HotelPage from "./components/Hotel/HotelPage";
+import BookingPage from "./components/Hotel/BookingPage";
 
 // import Tourpage from "./components/test/Tourpage";
 function App() {
@@ -329,8 +332,9 @@ function App() {
         <>
           <Navbar />
           <div className="flex container">
-            <HotelSidebar />
-            <HotelList />
+            {/* <HotelSidebar />
+            <HotelList /> */}
+            <HotelPage />
           </div>
         </>
       ),
@@ -340,9 +344,20 @@ function App() {
       element: (
         <>
           <Navbar />
-      
+
            <Hotelview /> 
-      
+
+        </>
+      ),
+    },
+    {
+      path: "/BookingPage",
+      element: (
+        <>
+          <Navbar />
+
+           <BookingPage />
+
         </>
       ),
     },

@@ -1,12 +1,17 @@
 import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function HotelCard({ hotel }) {
+  const backendUrl = "http://localhost:5000";
   return (
     <Link to='/hotelDetails' ><div className="border border-red-200 items-center justify-center rounded-lg p-4 shadow bg-white mb-4 flex flex-col md:flex-row ">
       <div className="md:flex-shrink-0  ">
         <img
-          src={hotel.imageUrl}
+          //src={hotel.imageUrl}
+          src={`${backendUrl}${hotel.imageUrl}`}
           alt={`Image of ${hotel.name}`}
           className="h-48 w-full md:w-48 object-cover md:rounded-lg "
         />
@@ -14,7 +19,8 @@ function HotelCard({ hotel }) {
           {hotel.images.map((imgSrc, index) => (
             <img
               key={index}
-              src={imgSrc}
+              // src={imgSrc}
+              src={`${backendUrl}${imgSrc}`}
               alt={`Additional view ${index + 1}`}
               className="h-12 w-12 object-cover rounded-lg"
             />
@@ -57,12 +63,13 @@ function HotelCard({ hotel }) {
             </p>
             <p className="text-sm">Per Night</p>
           </div>
-          <button  className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Login to Book Now & Pay Later!
           </button>
         </div>
       </div>
-    </div></Link>
+    </div>
+    </Link>
   );
 }
 
@@ -83,49 +90,112 @@ HotelCard.propTypes = {
 
 // export default HotelCard;
 
-function HotelList() {
-  const hotels = [
-    {
-      imageUrl:
-        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww",
-      name: "Goa Marriott Resort & Spa",
-      location: "Panjim",
-      distance: "2.9 km drive to Deltin Royale",
-      category: "Couple Friendly",
-      rating: 4.4,
-      reviewCount: 1126,
-      price: 19600,
-      taxes: 3528,
-      images: [
-        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww",
-        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww",
-      ],
-    },
-    {
-      imageUrl:
-        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww",
-      name: "Holiday Inn Resort Goa",
-      location: "Cavelossim",
-      distance: "3.5 km drive to Palolem Beach",
-      category: "Family Friendly",
-      rating: 4.6,
-      reviewCount: 986,
-      price: 18000,
-      taxes: 3000,
-      images: [
-        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww",
-        "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fHww",
-      ],
-    },
-    // More hotels with their respective images
-  ];
+function HotelList({ filters }) {
+  const [hotelData, setHotelData] = useState([]);
+
+  useEffect(() => {
+    const fetchHotels = async () => {
+      try {
+        // const { data } = await axios.get('/api/hotel');
+        // setHotelData(data);
+        const { data } = await axios.get("/api/hotel");
+        // Filter data client-side
+        // const filteredData = data.filter(hotel => {
+        //   return (
+        //      hotel.location.toLowerCase().includes(filters?.location.toLowerCase()) &&
+        //     // new Date(hotel.checkin) <= new Date(searchParams.checkin) &&
+        //     // new Date(hotel.checkout) >= new Date(searchParams.checkout) &&
+        //     // Add other conditions based on guests and price
+        //     true
+        //   );
+        // });
+        const filteredData = data.filter((hotel) => {
+          const matchesLocation = hotel.location
+            .toLowerCase()
+            .includes(filters.location.toLowerCase());
+          const matchesBudget =
+            (!filters.minBudget || hotel.price >= filters.minBudget) &&
+            (!filters.maxBudget || hotel.price <= filters.maxBudget);
+          //const matchesStarRating = !filters.starRating || hotel.rating === Number(filters.starRating.charAt(0));
+          const matchesStarRating =
+            !filters.starRating ||
+            (filters.starRating.includes("1") &&
+              hotel.star > 0 &&
+              hotel.star < 2) ||
+            (filters.starRating.includes("2") &&
+              hotel.star > 1 &&
+              hotel.star < 3) ||
+            (filters.starRating.includes("3") &&
+              hotel.star > 2 &&
+              hotel.star < 4) ||
+            (filters.starRating.includes("4") &&
+              hotel.star > 3 &&
+              hotel.star < 5) ||
+            (filters.starRating.includes("5") &&
+              hotel.star > 4 &&
+              hotel.star < 6) ||
+            filters.starRating.includes("Select");
+          const matchesGuestRating =
+            !filters.guestRating ||
+            (filters.guestRating.includes("Excellent") &&
+              hotel.rating >= 4.5) ||
+            (filters.guestRating.includes("Very Good") &&
+              hotel.rating >= 4.0) ||
+            (filters.guestRating.includes("Good") && hotel.rating >= 3.5) ||
+            (filters.guestRating.includes("Pleasant") && hotel.rating >= 3.0) ||
+            filters.guestRating.includes("Select");
+          const matchesPropertyType =
+            !filters.propertyType ||
+            hotel.type.toLowerCase() === filters.propertyType.toLowerCase() ||
+            filters.propertyType.includes("Select");
+          const matchesAmenities =
+            !filters.amenities ||
+            filters.amenities.includes("Select") ||
+            hotel.amenities.some((amenity) =>
+              amenity.toLowerCase().includes(filters.amenities.toLowerCase())
+            );
+          const matchesFacilities =
+            !filters.facilities.length ||
+            filters.facilities.every((facility) =>
+              hotel.facilities
+                .map((hotelFacility) => hotelFacility.toLowerCase())
+                .includes(facility.toLowerCase())
+            );
+
+          return (
+            matchesLocation &&
+            matchesBudget &&
+            matchesStarRating &&
+            matchesGuestRating &&
+            matchesPropertyType &&
+            matchesAmenities &&
+            matchesFacilities
+          );
+        });
+        setHotelData(filteredData);
+        //console.log(filteredData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchHotels();
+  }, [filters]);
 
   return (
     <div className="w-full md:w-3/4 m-auto bg-white p-4">
-      {hotels.map((hotel, index) => (
+      {/* {hotels.map((hotel, index) => (
         <HotelCard key={index} hotel={hotel} />
-      ))}
+      ))} */}
+      {hotelData?.map((hotel, i) => {
+        // console.log(item.id, i);
+        return <HotelCard key={hotel._id} hotel={hotel} />;
+      })}
     </div>
   );
 }
+
+HotelList.propTypes = {
+  filters: PropTypes.object.isRequired,
+};
+
 export default HotelList;

@@ -10,6 +10,8 @@ import Tour from './models/tourModel.js';
 import tours from './data/tour.js';
 import TourCategory from './models/tourCategoryModel.js';
 import tourCategoryData from './data/tourCategory.js';
+import hotels from './data/hotels.js';
+import Hotel from "./models/hotelModel.js"
 
 dotenv.config();
 
@@ -21,6 +23,7 @@ const importData = async () => {
     await User.deleteMany();
     await Tour.deleteMany();
     await TourCategory.deleteMany();
+    await Hotel.deleteMany();
 
     const createdUsers = await User.insertMany(users);
 
@@ -38,11 +41,18 @@ const importData = async () => {
       return {...category};
     })
 
+    const sampleHotels = hotels.map((hotel) => {
+      return { ...hotel };
+    });
+
+
     await Blog.insertMany(sampleBlogs);
 
     await Tour.insertMany(sampleTours);
 
     await TourCategory.insertMany(sampleTourCategory);
+
+    await Hotel.insertMany(sampleHotels);
 
 
     console.log('Data Imported!'.green.inverse);
@@ -60,6 +70,7 @@ const destroyData = async () => {
         await User.deleteMany();
         await Tour.deleteMany();
         await TourCategory.deleteMany();
+        await Hotel.deleteMany();
 
 
       console.log('Data Destroyed!'.red.inverse);

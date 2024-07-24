@@ -1,60 +1,8 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-// import blogData from "./data";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// const blogs = [
-//   {
-//     title: "My Adventure in Alps,The Heighest!",
-//     description:
-//       "Unique side projects are the best place to innovate specially at your work.",
-//     author: "David Miller",
-//     image:
-//       "https://cdn.pixabay.com/photo/2016/11/23/14/37/blur-1853262_640.jpg",
-//     date: "26",
-//     month: "Oct",
-//     year: "2016",
-//   },
-//   {
-//     title: "My Adventure in Alps,The Heighest!",
-//     description:
-//       "Unique side projects are the best place to innovate specially at your work.",
-
-//     author: "Shawn Paul",
-//     image:
-//       "https://cdn.pixabay.com/photo/2023/05/21/18/28/consumption-8009082_1280.jpg",
-//     date: "26",
-//     month: "Oct",
-//     year: "2019",
-//   },
-//   {
-//     // title: "How I Escape My Mind By Listening To Music",
-//     title: "My Adventure in Alps,The Heighest!",
-//     description:
-//       "Unique side projects are the best place to innovate specially at your work.",
-
-//     author: "Elleca Perry",
-//     image:
-//       "https://cdn.pixabay.com/photo/2017/08/30/07/52/money-2696219_640.jpg",
-//     date: "26",
-//     month: "Oct",
-//     year: "2016",
-//   },
-//   {
-//     // title: "How I Escape My Mind By Listening To Music",
-//     title: "My Adventure in Alps,The Heighest!",
-//     description:
-//       "Unique side projects are the best place to innovate specially at your work.",
-
-//     author: "Elleca Perry",
-//     image:
-//       "https://cdn.pixabay.com/photo/2017/08/30/07/52/money-2696219_640.jpg",
-//     date: "26",
-//     month: "Oct",
-//     year: "2016",
-//   },
-// ];
 
 const BlogItem = ({ blog }) => {
   const backendUrl = "http://localhost:5000";
@@ -147,12 +95,15 @@ const ShowBlog = () => {
 
         <div className="grid grid-cols-9 mt-12 gap-4  p-2   bg-gray-100 container  mx-auto">
           {blogData?.map((blog, i) => (
+            blog.featured == true && (
             <div
               className="col-span-12 md:col-span-6  bg-gry-100 rounded-lg lg:col-span-3 mb- border"
               key={i}
             >
               <BlogItem blog={blog} />
             </div>
+            )
+            
           ))}
         </div>
 

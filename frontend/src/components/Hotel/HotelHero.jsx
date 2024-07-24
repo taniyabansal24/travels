@@ -1,21 +1,44 @@
+import React, { useState } from "react";
 import { GrLocation } from "react-icons/gr";
 import { FiChevronDown } from "react-icons/fi";
 import vid from "../../assets/hotelvideo.mp4";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const HotelHero = () => {
+  const [formData, setFormData] = useState({
+    city: "",
+    checkin: "",
+    checkout: "",
+    guests: "",
+    price: ""
+  });
+
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [id]: value
+    }));
+  };
+
+  const handleSearch = () => {
+    navigate("/h", { state: formData });
+  };
+
   return (
     <div className="relative z-0">
       <video
         src={vid}
         muted
-        autoPlay
+        autoPlay 
         loop
         className="absolute inset-0 w-full h-full object-cover"
         type="video/mp4"
       ></video>
       <div className="relative z-10 bg-opacity-50 bg-black py-4 ">
-        <div className="container mx-auto px-4 py-12 text-white  ">
+        <div className="container mx-auto px-4 py-12 text-white">
           <div className="text-center mb-8">
             <span className="block text-sm">Our hotels</span>
             <h1 className="text-4xl font-bold">Search your hotels</h1>
@@ -31,12 +54,11 @@ const HotelHero = () => {
                   id="city"
                   placeholder="Enter name here..."
                   className="border rounded p-2 flex-grow"
+                  value={formData.city}
+                  onChange={handleChange}
                 />
-
-                <GrLocation className="icon  absolute top-3 right-2 " />
+                <GrLocation className="icon absolute top-3 right-2 " />
               </div>
-              {/* <span className="text-lg font-bold mt-2">Goa</span>
-              <span className="text-sm">India</span> */}
             </div>
             <div className="flex flex-col">
               <label htmlFor="checkin" className="font-semibold text-sm">
@@ -47,10 +69,10 @@ const HotelHero = () => {
                   type="date"
                   id="checkin"
                   className="border rounded p-2 w-full"
+                  value={formData.checkin}
+                  onChange={handleChange}
                 />
               </div>
-              {/* <span className="text-lg font-bold mt-2">13 Jul'24</span>
-              <span className="text-sm">Saturday</span> */}
             </div>
             <div className="flex flex-col">
               <label htmlFor="checkout" className="font-semibold text-sm">
@@ -61,10 +83,10 @@ const HotelHero = () => {
                   type="date"
                   id="checkout"
                   className="border rounded p-2 w-full"
+                  value={formData.checkout}
+                  onChange={handleChange}
                 />
               </div>
-              {/* <span className="text-lg font-bold mt-2">14 Jul'24</span>
-              <span className="text-sm">Sunday</span> */}
             </div>
             <div className="flex flex-col">
               <label htmlFor="guests" className="font-semibold text-sm">
@@ -76,6 +98,8 @@ const HotelHero = () => {
                   id="guests"
                   placeholder="1 Room 2 Adults"
                   className="border rounded p-2 w-full"
+                  value={formData.guests}
+                  onChange={handleChange}
                 />
                 <FiChevronDown className="absolute top-3 right-2 " />
               </div>
@@ -90,18 +114,20 @@ const HotelHero = () => {
                   id="price"
                   placeholder="₹0-₹1500, ₹1500-₹2500,..."
                   className="border rounded p-2 w-full"
+                  value={formData.price}
+                  onChange={handleChange}
                 />
                 <FiChevronDown className="absolute top-3 right-2 " />
               </div>
             </div>
           </div>
           <div className="text-center mt-[-15px]">
-            <Link
-              to="/h"
+            <button
+              onClick={handleSearch}
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
               SEARCH
-            </Link>
+            </button>
           </div>
         </div>
       </div>

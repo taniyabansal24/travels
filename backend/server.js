@@ -12,6 +12,7 @@ import userRoutes from "./routes/userRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import tourRoutes from "./routes/tourRoutes.js"
+import hotelRoutes from "./routes/hotelRoutes.js"
 
 connectDB();
 const app = express();
@@ -34,8 +35,8 @@ app.use("/api/blog", blogRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/upload", uploadRoutes);
 app.use("/api/admin", adminRoutes);
-app.use("/api/tour", tourRoutes)
-
+app.use("/api/tour", tourRoutes);
+app.use("/api/hotel", hotelRoutes);
 
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));

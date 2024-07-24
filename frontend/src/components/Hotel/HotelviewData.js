@@ -1,8 +1,7 @@
-import hotel1 from "../../assets/hotel1.jpeg";
-import hotel2 from "../../assets/hotel2.jpg";
-import hotel3 from "../../assets/hotel3.jpg";
-import hotel4 from "../../assets/hotel4.jpg";
-
+import hotel1 from '../../assets/hotel1.jpeg';
+import hotel2 from '../../assets/hotel2.jpg';
+import hotel3 from '../../assets/hotel3.jpg';
+import hotel4 from '../../assets/hotel4.jpg';
 const data = [
   {
     hotelTitle: "Ginger Goa, Panjim",
