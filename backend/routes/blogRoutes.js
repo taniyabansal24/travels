@@ -14,3 +14,4 @@ router.route("/").get(getBlogs).post( createBlog);
 router.route("/:id").get(getBlogsById).put(protect, admin, updateBlog).delete(protect, admin, deleteBlog);
 
 export default router;
+ 

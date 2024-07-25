@@ -5,7 +5,7 @@ const hotelSchema = new mongoose.Schema(
     imageUrl: {
       type: String,
       required: true,
-    },
+    }, 
     name: {
       type: String,
       required: true,
@@ -67,6 +67,98 @@ const hotelSchema = new mongoose.Schema(
     featured: {
       type: Boolean,
       required: true,
+    },
+    hotelPriceHighlight: {
+      type: String,
+      required: true,
+    },
+    inclusions: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
+    foodAndDining: {
+      title: {
+        type: String,
+        required: true,
+      },
+      description: [
+        {
+          type: String,
+          required: true,
+        },
+      ],
+      img: {
+        type: String,
+        required: true,
+      },
+    },
+    locationAndSurroundings: {
+      title: {
+        type: String,
+        required: true,
+      },
+      description: [
+        {
+          type: String,
+          required: true,
+        },
+      ],
+      img: {
+        type: String,
+        required: true,
+      },
+    },
+    roomDetailsAndAmenities: {
+      title: {
+        type: String,
+        required: true,
+      },
+      description: [
+        {
+          type: String,
+          required: true,
+        },
+      ],
+      img: {
+        type: String,
+        required: true,
+      },
+    },
+    activitiesAndNearbyAttractions: {
+      title: {
+        type: String,
+        required: true,
+      },
+      description: [
+        {
+          type: String,
+          required: true,
+        },
+      ],
+      img: {
+        type: String,
+        required: true,
+      },
+    },
+    hotelDetails: {
+      description: {
+        type: String,
+        required: true,
+      },
+      priceDescription: {
+        type: String,
+        required: true,
+      },
+      priceLocation: {
+        type: String,
+        required: true,
+      },
+      price: {
+        type: String,
+        required: true,
+      },
     },
   },
   {
