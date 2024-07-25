@@ -1,14 +1,39 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function HotelCard({ hotel }) {
+function HotelCard({ hotel, filters, setFilters }) {
+
+  // const {
+  //   //city: "",
+  //   checkin,
+  //   checkout,
+  //   guests,
+  //   price,
+  //   location,
+  //   minBudget,
+  //   maxBudget,
+  //   starRating,
+  //   guestRating,
+  //   propertyType,
+  //   amenities,
+  //   facilities,
+  // } = filters
+
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    navigate(`/hotel/${hotel._id}`, { state: filters });
+  };
+
+
   const backendUrl = "http://localhost:5000";
   return (
-    <Link to='/hotelDetails' ><div className="border border-red-200 items-center justify-center rounded-lg p-4 shadow bg-white mb-4 flex flex-col md:flex-row ">
+    //<Link to={`/hotel/${hotel._id}`} >
+      <div className="border border-red-200 items-center justify-center rounded-lg p-4 shadow bg-white mb-4 flex flex-col md:flex-row ">
       <div className="md:flex-shrink-0  ">
         <img
           //src={hotel.imageUrl}
@@ -64,13 +89,13 @@ function HotelCard({ hotel }) {
             </p>
             <p className="text-sm">Per Night</p>
           </div>
-          <button className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button onClick={handleSearch} className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Login to Book Now & Pay Later!
           </button>
         </div>
       </div>
     </div>
-    </Link>
+    //</Link>
   );
 }
 
@@ -91,25 +116,13 @@ HotelCard.propTypes = {
 
 // export default HotelCard;
 
-function HotelList({ filters }) {
+function HotelList({ filters, setFilters }) {
   const [hotelData, setHotelData] = useState([]);
 
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        // const { data } = await axios.get('/api/hotel');
-        // setHotelData(data);
         const { data } = await axios.get("/api/hotel");
-        // Filter data client-side
-        // const filteredData = data.filter(hotel => {
-        //   return (
-        //      hotel.location.toLowerCase().includes(filters?.location.toLowerCase()) &&
-        //     // new Date(hotel.checkin) <= new Date(searchParams.checkin) &&
-        //     // new Date(hotel.checkout) >= new Date(searchParams.checkout) &&
-        //     // Add other conditions based on guests and price
-        //     true
-        //   );
-        // });
         const filteredData = data.filter((hotel) => {
           const matchesLocation = hotel.location
             .toLowerCase()
@@ -189,7 +202,7 @@ function HotelList({ filters }) {
       ))} */}
       {hotelData?.map((hotel, i) => {
         // console.log(item.id, i);
-        return <HotelCard key={hotel._id} hotel={hotel} />;
+        return <HotelCard key={hotel._id} hotel={hotel} filters={filters} setFilters={setFilters} />;
       })}
     </div>
   );

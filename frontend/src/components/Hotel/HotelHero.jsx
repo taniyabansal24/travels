@@ -5,10 +5,19 @@ import vid from "../../assets/hotelvideo.mp4";
 import { useNavigate } from "react-router-dom";
 
 const HotelHero = () => {
+
+  const formatDate = (date) => {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
   const [formData, setFormData] = useState({
     //city: "",
-    checkin: "",
-    checkout: "",
+    checkin: formatDate(new Date()),
+    checkout: formatDate(new Date()),
     guests: "",
     price: "",
     location: "",
@@ -23,6 +32,11 @@ const HotelHero = () => {
 
   const navigate = useNavigate();
 
+  const handleSearch = () => {
+    navigate("/h", { state: formData });
+  };
+
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prevState) => ({
@@ -31,9 +45,6 @@ const HotelHero = () => {
     }));
   };
 
-  const handleSearch = () => {
-    navigate("/h", { state: formData });
-  };
 
   return (
     <div className="relative z-0">

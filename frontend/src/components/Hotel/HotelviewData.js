@@ -4,22 +4,22 @@ import hotel3 from '../../assets/hotel3.jpg';
 import hotel4 from '../../assets/hotel4.jpg';
 const data = [
   {
-    hotelTitle: "Ginger Goa, Panjim",
-    hotelAddress: "Elton St 125 New york",
-    hotelDistance: "Excellent location – 500m from center",
-    roomCategory: "Luxe Twin Room",
+    name: "Ginger Goa, Panjim",
+    location: "Elton St 125 New york",
+    distance: "Excellent location – 500m from center",
+    category: "Luxe Twin Room",
     price: "3,500",
     rating: "4.5",
+    images: [
+       hotel1 , 
+       hotel2 ,
+       hotel3 ,
+       hotel4 ,
+       hotel1 ,
+       hotel2 ,
+    ],
     hotelPriceHighlight:
       "Book a stay over $114 at this property and get a free airport taxi",
-    photos: [
-      { src: hotel1 },
-      { src: hotel2 },
-      { src: hotel3 },
-      { src: hotel4 },
-      { src: hotel1 },
-      { src: hotel2 },
-    ],
     inclusions: [
       "Free Welcome Drink on Arrival",
       "Complimentary Early Check in",

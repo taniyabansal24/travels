@@ -339,24 +339,50 @@ function App() {
         </>
       ),
     },
+    // {
+    //   path: "/hotelDetails",
+    //   element: (
+    //     <>
+    //       <Navbar />
+
+    //        <Hotelview /> 
+
+    //     </>
+    //   ),
+    // },
     {
-      path: "/hotelDetails",
+      path: "/hotel/:id",
       element: (
         <>
           <Navbar />
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
+          {/* <Home /> */}
+          <Hotelview />
 
-           <Hotelview /> 
-
+          <Footer />
         </>
       ),
     },
+    // {
+    //   path: "/BookingPage",
+    //   element: (
+    //     <>
+    //       <Navbar />
+
+    //        <BookingPage />
+
+    //     </>
+    //   ),
+    // },
     {
-      path: "/BookingPage",
+      path: "/hotel/booking/:id",
       element: (
         <>
           <Navbar />
 
            <BookingPage />
+
+           <Footer />
 
         </>
       ),

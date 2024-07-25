@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Hotelview.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,7 +7,7 @@ import {
   faCircleXmark,
   faLocationDot,
   faUtensils,
-  faMapMarkerAlt,
+  faMapMarkerAlt, 
   faTree,
   faBed,
   faCheckCircle,
@@ -15,32 +15,54 @@ import {
   faStarHalfAlt,
   faStar as faStarEmpty
 } from "@fortawesome/free-solid-svg-icons";
-import data from './HotelviewData'; 
+import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 import Modal from "./Modal";
-import {Link} from "react-router-dom"// Import the data from HotelviewData.js
 
 const Hotelview = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const [hotelData, setHotelData] = useState({});
+  const p = useParams();
 
+  const navigate = useNavigate();
+  const locationHook = useLocation();
+
+
+  const handleSearch = () => {
+    navigate(`/hotel/booking/${hotelData._id}`, { state: locationHook.state });
+  };
+
+
+  useEffect(() => {
+    const fetchHotels = async () => {
+      try {
+        const { data } = await axios.get(`/api/hotel/${p.id}`);
+        setHotelData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error); 
+      }
+    };
+    fetchHotels();
+  }, [p.id]);
 
   const {
-    hotelTitle,
-    hotelAddress,
-    hotelDistance,
+    name,
+    location,
+    distance, 
     hotelPriceHighlight,
-    roomCategory,
-    photos,
+    category,
+    images = [],
     price,
-    inclusions,
-    hotelDetails,
+    inclusions = [],
+    hotelDetails = {},
     foodAndDining,
     locationAndSurroundings,
     roomDetailsAndAmenities,
     activitiesAndNearbyAttractions,
-    rating,
-  } = data[0];
+    rating
+  } = hotelData;
 
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -49,13 +71,11 @@ const Hotelview = () => {
 
   const handleMove = (direction) => {
     let newSlideNumber;
-
     if (direction === "l") {
-      newSlideNumber = slideNumber === 0 ? photos.length - 1 : slideNumber - 1;
+      newSlideNumber = slideNumber === 0 ? images.length - 1 : slideNumber - 1;
     } else {
-      newSlideNumber = slideNumber === photos.length - 1 ? 0 : slideNumber + 1;
+      newSlideNumber = slideNumber === images.length - 1 ? 0 : slideNumber + 1;
     }
-
     setSlideNumber(newSlideNumber);
   };
 
@@ -63,11 +83,11 @@ const Hotelview = () => {
     setModalContent(content);
   };
 
-  const renderStars = (rating) => {
+  const renderStars = (rating = 0) => {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 !== 0;
     const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-
+  
     return (
       <div className="star-rating">
         {[...Array(fullStars)].map((_, i) => (
@@ -80,12 +100,14 @@ const Hotelview = () => {
       </div>
     );
   };
+  
+  const backendUrl = "http://localhost:5000";
 
   return (
     <div>
-       <div className="">
+      <div>
         {open && (
-        <div className="slider fixed w-[100vw] h-[100vh]">
+          <div className="slider fixed w-[100vw] h-[100vh]">
             <FontAwesomeIcon
               icon={faCircleXmark}
               className="close top-5 right-5"
@@ -97,8 +119,9 @@ const Hotelview = () => {
               onClick={() => handleMove("l")}
             />
             <div className="sliderWrapper">
-            <img
-                src={photos[slideNumber].src}
+              <img
+                //src={images[slideNumber]}
+                src={`${backendUrl}${images[slideNumber]}`}
                 alt=""
                 className="w-[80%] h-[80vh]"
               />
@@ -111,37 +134,24 @@ const Hotelview = () => {
           </div>
         )}
         <div className="hotelWrapper p-12">
-          <h1 className="hotelTitle">{hotelTitle}</h1>
-            {/* <div className="hotelAddress">
-            <FontAwesomeIcon icon={faLocationDot} />
-            <span>{hotelAddress}</span>
-          </div>
-          <span className="hotelDistance">
-            {hotelDistance}
-          </span>
-          <span className="hotelPriceHighlight">
-            {hotelPriceHighlight}
-          </span>
-          <button className="bookNow">Reserve or Book Now!</button> */} 
-          {/* Image Slider and Overview */}
+          <h1 className="name">{name}</h1>
           <div className="w-full gap-[30px] pb-[12px] flex flex-col md:flex-row">
-            {/* Image Slider */}
             <div className="hotelImages w-[94%] gap-3">
-              {photos.map((photo, i) => (
+              {images.map((photo, i) => (
                 <div className="hotelImgWrapper w-[32%]" key={i}>
                   <img
                     onClick={() => handleOpen(i)}
-                    src={photo.src}
+                    //src={photo}
+                    src={`${backendUrl}${photo}`}
                     alt=""
                     className="hotelImg rounded-md gap-1"
                   />
                 </div>
               ))}
             </div>
-            {/* Hotel Details */}
             <div className="hotelContext">
               <div className="w-full">
-                <h5 className="text-xl font-semibold">{roomCategory}</h5>
+                <h5 className="text-xl font-semibold">{category}</h5>
                 <p className="text-[15px] text-black font-normal">
                   (Fits 2 Adults)
                 </p>
@@ -163,26 +173,24 @@ const Hotelview = () => {
                   ₹{price}{" "}
                   <span className="text-xs font-normal">+ All Taxes</span>
                 </h4>
-                <Link to="/BookingPage">
-                <button className="bookNow">Reserve or Book Now!</button>
-                </Link>
+                
+                  <button onClick={handleSearch} className="bookNow">Reserve or Book Now!</button>
+                
               </div>
-              </div>
+            </div>
           </div>
           <div className="hotelDetails">
             <div className="hotelDetailsTexts">
-             {/* Hotel Description */}
               <p className="hotelDesc">
-              {hotelDetails.description}{" "}
+                {hotelDetails.description}{" "}
                 <span
                   className="text-red-600 cursor-pointer"
-                  onClick={() => handleModalOpen(foodAndDining)}
+                  onClick={() => handleModalOpen(hotelData.foodAndDining)}
                 >
                   More
                 </span>
               </p>
-               {/* More Sections */}
-               <div className="more-sections">
+              <div className="more-sections">
                 <div className="section-button">
                   <FontAwesomeIcon icon={faUtensils} className="section-icon" />
                   <h5
@@ -226,9 +234,8 @@ const Hotelview = () => {
                 </div>
               </div>
             </div>
-             {/* Ratings Section */}
             <div className="hotelDetailsPrice">
-            <div className="ratings">
+              <div className="ratings">
                 <h3>Rating: {rating} </h3>
                 {renderStars(rating)}
               </div>

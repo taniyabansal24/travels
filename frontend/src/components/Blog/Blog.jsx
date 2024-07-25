@@ -8,7 +8,7 @@ import {useEffect, useState} from "react";
 import axios from "axios"
 
 
-// export default tour_data;
+// export default tour_data; 
  
 const Card = (props) => {
     const backendUrl = "http://localhost:5000";
