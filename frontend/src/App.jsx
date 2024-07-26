@@ -134,6 +134,17 @@ function App() {
       ),
     },
     {
+      path: "/tour/:id",
+      element: (
+        <>
+          <Navbar />
+          {/* <div className="fake-header h-[15vh] bg-transparent"></div> */}
+          <Ptour />
+          <Footer />
+        </>
+      ),
+    },
+    {
       path: `/tour/${data[0].title}/:id`,
       element: (
         <>

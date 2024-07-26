@@ -15,21 +15,29 @@ const getTours = asyncHandler(async (req, res) => {
 //@access   Public
 const getTourById = asyncHandler(async (req, res) => {
  
-  const { id } = req.params;
-  try {
-    // Find the Tour document containing the type with the specified _id
-    const tour = await Tour.findOne({ 'types._id': id });
+  // const { id } = req.params;
+  // try {
+  //   // Find the Tour document containing the type with the specified _id
+  //   const tour = await Tour.findOne({ 'types._id': id });
 
-    if (tour) {
-      // Find the specific type within the found Tour document
-      const type = tour.types.id(id);
+  //   if (tour) {
+  //     // Find the specific type within the found Tour document
+  //     const type = tour.types.id(id);
 
-      res.json(type);
-    } else {
-      res.status(404).json({ message: 'Tour not found' });
-    }
-  } catch (error) {
-    res.status(500).json({ message: 'Error fetching data', error });
+  //     res.json(type);
+  //   } else {
+  //     res.status(404).json({ message: 'Tour not found' });
+  //   }
+  // } catch (error) {
+  //   res.status(500).json({ message: 'Error fetching data', error });
+  // }
+  const tour = await Tour.findById(req.params.id);
+
+  if (tour) {
+    return res.json(tour);
+  } else {
+    res.status(404);
+    throw new Error("tour not found");
   }
 });
 

@@ -50,7 +50,7 @@ const importData = async () => {
 
     await Tour.insertMany(sampleTours);
 
-    await TourCategory.insertMany(sampleTourCategory);
+     await TourCategory.insertMany(sampleTourCategory);
 
     await Hotel.insertMany(sampleHotels);
 
@@ -69,7 +69,7 @@ const destroyData = async () => {
         await Blog.deleteMany();
         await User.deleteMany();
         await Tour.deleteMany();
-        await TourCategory.deleteMany();
+         await TourCategory.deleteMany();
         await Hotel.deleteMany();
 
 
