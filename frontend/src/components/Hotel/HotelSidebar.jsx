@@ -16,7 +16,7 @@ function HotelSidebar({ filters, setFilters }) {
       ...filters,
       [name]: value,
     });
-  };
+  }; 
 
   const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;

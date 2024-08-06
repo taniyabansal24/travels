@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+ 
 function HotelCard({ hotel, filters, setFilters }) {
 
   // const {
@@ -117,7 +117,7 @@ HotelCard.propTypes = {
 // export default HotelCard;
 
 function HotelList({ filters, setFilters }) {
-  const [hotelData, setHotelData] = useState([]);
+  const [hotelData, setHotelData] = useState([]); 
 
   useEffect(() => {
     const fetchHotels = async () => {

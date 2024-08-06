@@ -18,7 +18,7 @@ const HotelHero = () => {
     //city: "",
     checkin: formatDate(new Date()),
     checkout: formatDate(new Date()),
-    guests: "",
+    guests: "", 
     price: "",
     location: "",
     minBudget: "",

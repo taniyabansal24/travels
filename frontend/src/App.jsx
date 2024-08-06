@@ -50,6 +50,10 @@ import HotelSidebar from "./components/Hotel/HotelSidebar";
 import HotelList from "./components/Hotel/HotelList";
 import HotelPage from "./components/Hotel/HotelPage";
 import BookingPage from "./components/Hotel/BookingPage";
+import CabSidebar from "./components/Cab/CabSidebar";
+import CabList from "./components/Cab/CabList";
+import CabPage from "./components/Cab/CabPage";
+import ReviewBooking from "./components/Cab/ReviewBooking";
 
 // import Tourpage from "./components/test/Tourpage";
 function App() {
@@ -522,6 +526,30 @@ function App() {
         <>
           <Sidebar />
           <EditPackage />
+        </>
+      ),
+    },
+    {
+      path: "/c",
+      element: (
+        <>
+          <Navbar />
+          <div className="flex container">
+            {/* <HotelSidebar />
+            <HotelList /> */}
+            <CabPage />
+          </div>
+        </>
+      ),
+    },
+    {
+      path: "/cab/booking/:id",
+      element: (
+        <>
+          <Navbar />
+          {/* <div className="fake-header h-[10vh] bg-transparent"></div> */}
+          <ReviewBooking />
+          <Footer />
         </>
       ),
     },
