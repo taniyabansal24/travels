@@ -77,9 +77,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-
 import './Hero.css';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css/autoplay';
 
 const Hero = () => {
   
@@ -99,8 +99,13 @@ const Hero = () => {
           modifier: 1,
           slideShadows: true,
         }}
+        autoplay={{
+          delay: 3000, // Slide every 5 seconds
+          disableOnInteraction: false,
+        }}
+        initialSlide={4}
         pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
@@ -128,7 +133,7 @@ const Hero = () => {
           <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
         </SwiperSlide>
       </Swiper>
       </div>

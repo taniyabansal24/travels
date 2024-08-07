@@ -19,7 +19,7 @@ const HotelCard = ({hotel}) => {
         >
           <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 24 24"
               fill="currentColor"
               className="w-6 h-6"

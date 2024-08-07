@@ -8,7 +8,7 @@ const Recommendation_hotel = () => {
   const [hotelData, sethotelData] = useState([]);
 
   useEffect(() => { 
-    const fetchHotels = async () => {
+    const fetchHotels = async () => { 
       try {
         const { data } = await axios.get("/api/hotel");
         sethotelData(data);

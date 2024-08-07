@@ -26,7 +26,7 @@ const tours = [
     ],
     availableFrom: new Date("2024-07-01"),
     availableTill: new Date("2024-08-30"),
-
+    featured: false,
     tourPlan: [
       {
         day: 1,
@@ -147,7 +147,7 @@ const tours = [
     ],
     availableFrom: new Date("2024-08-01"),
     availableTill: new Date("2024-09-30"),
-
+    featured: true,
     tourPlan: [
       {
         day: 1,
@@ -266,7 +266,7 @@ const tours = [
     ],
     availableFrom: new Date("2024-09-01"),
     availableTill: new Date("2024-10-30"),
-
+    featured: false,
     tourPlan: [
       {
         day: 1,
@@ -387,7 +387,7 @@ const tours = [
     ],
     availableFrom: new Date("2024-10-01"),
     availableTill: new Date("2024-11-30"),
-
+    featured: true,
     tourPlan: [
       {
         day: 1,
@@ -508,7 +508,7 @@ const tours = [
     ],
     availableFrom: new Date("2024-11-01"),
     availableTill: new Date("2024-12-30"),
-
+    featured: false,
     tourPlan: [
       {
         day: 1,
@@ -627,7 +627,7 @@ const tours = [
     ],
     availableFrom: new Date("2024-07-01"),
     availableTill: new Date("2024-08-30"),
-
+    featured: true,
     tourPlan: [
       {
         day: 1,
@@ -748,7 +748,7 @@ const tours = [
     ],
     availableFrom: new Date("2024-08-01"),
     availableTill: new Date("2024-09-30"),
-
+    featured: false,
     tourPlan: [
       {
         day: 1,
@@ -869,7 +869,7 @@ const tours = [
     ],
     availableFrom: new Date("2024-09-01"),
     availableTill: new Date("2024-10-30"),
-
+    featured: true,
     tourPlan: [
       {
         day: 1,
@@ -990,7 +990,7 @@ const tours = [
     ],
     availableFrom: new Date("2024-10-01"),
     availableTill: new Date("2024-11-30"),
-
+    featured: false,
     tourPlan: [
       {
         day: 1,

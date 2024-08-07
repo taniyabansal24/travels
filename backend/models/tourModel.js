@@ -140,6 +140,10 @@ const tourSchema = new mongoose.Schema({
   inclusions: [{ type: String, required: true }],
   availableFrom: { type: Date, required: true },
   availableTill: { type: Date, required: true },
+  featured: {
+    type: Boolean,
+    required: true,
+  },
   tourPlan: [
     {
       day: { type: Number, required: true },
