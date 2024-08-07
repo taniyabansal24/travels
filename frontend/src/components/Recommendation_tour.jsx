@@ -32,7 +32,7 @@ const Recommendation_tour = () => {
               item.featured == true &&
               <TourCard
                 key={i}
-                id={item.id}
+                id={item._id}
                 name={item.name}
                 image={item.image} 
                 nights={item.nights}
